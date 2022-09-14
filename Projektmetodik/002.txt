@@ -1,0 +1,130 @@
+http://www.example.com:80/forum/questions
+
+Protokoll (https=krypterad)
+Subdomän, domän, toppdomän
+Port (443 https, 80 web)
+Resurs (data, video etc)
+
+Klient-server model
+Klient: request som tolkas av servern
+Server: response och statuscode
+1xx: Mottaget men inte klart
+2xx: Success
+3xx: Redirection
+4xx: Client error
+5xx: Server error
+
+DOM (document object model)
+tolkas i browser som träd med noder (p under body etc)
+ELement (till slutet av html /), noder (alla delar av trädet inkl. innehåll av taggar)
+
+___________________
+
+Stateful och stateless
+State (på eller av/läge)
+Stateful: har states
+Stateless: har inte (t.ex http) bra för statiska sidor men inte för inloggning/privata sidor
+Skulle vilja spara volym på mediaspelare etc
+
+Session i browser: pågående besök
+Lokal data: cookies, local storage, webbläsardatabas (IndexedDB eller Web SQL)
+
+Cookies: domän, namn, slutdatum och innehåll
+skickas med varje request om den finns
+servern sparar information om dig och din cookie
+
+Local storage: liten databas i webbläsaren
+Används av JS och har inget med servern att göra
+Bra för information som inte är känslig t.ex inställningar (volym)
+
+IndexedDB/Web SQL: också databaser i browser men mer komplicerade
+
+Cache: sparas i browsern
+Sparas information hämtat från servern lokalt så att den inte behöver hämtas igen
+Om den redan finns lokalt behöver servern inte anropas igen
+Kan innebära att browsern inte har senaste uppdaterade filen
+Cache busting: tvinga browsern att hämta informationen igen
+
+Service workers: högre kontroll för (komplicerad) cachning
+
+
+Vad menas med state?
+Vilket läge någonting finns i (är jag inloggad eller inte)
+
+Hur gör man för att få state på webben eftersom HTTP är stateless?
+Man använder cookies (läge både på klient och server)
+
+Vilka sätt finns det att spara information i webbläsaren?
+Cookies, local storage, IndexedDB/WebSQL
+
+___________________________________
+
+Development tools: i browser för att hjälpa devs
+Application: lokal data
+Elements: alla element i DOMträdet, kan också enkelt se använda CSS-regler, kan ändra DOMträdet för hand och ändra CSS
+Console: Se olika typer av fel, meddelanden till användare/sig själv
+Network activity: pågående nätverkstrafik
+Kan trycka på en knapp för att se hur sidan ser ut i andra storlekar
+
+___________________________________
+
+Sökmotorer: 
+Då: länkregister och portalsajter
+Spiders (crawlar WWW)
+Tidigare sökmotorer hade lingvistisk approach (hur ofta sökordet användes t.ex)
+I slutet av 90talet, tänker på internet som en graf (relationskarta)
+Istället för innehållet tittade man på hur många andra som länkade till sidan
+Lösningen var ekonomiskt smart (få datorer behövdes)
+Google konkurrerade ut nästal alla andra inom några år
+
+En sökmotor:
+- Web crawler (web spider) besöker sidor och kopierar innehåll, letar länkar
+- Katalog (Index), innehåll sparas och sorteras efter sökord och populäritet och trovärdighet
+- Sök, söker indexet och matchar innehållet, presenteras i relevant ordning
+
+Kan själv lägga till webbplatsen i en sökmotors register, eller stoppa med ROBOTS.txt (indexeringsinstruktioner)
+Robotor kommer inte åt inloggningsskyddade sidor
+
+Rankning, lite hemligt men t.ex https istället för http för Google
+
+SEO: search engine optimization, göra sin webbplats så intressant för sökmotorer som möjligt
+Relevant innehåll och viktiga sökord
+Viktigast för frontend: 
+HTML
+URL
+Laddningstid
+Metadata
+
+HTML: rätt tagg för rätt sak, H1 för viktigaste rubriken etc
+Semantisk HTML
+URL: ju närmare URL matchar innehållet och sökorden desto bättre
+Viktigt att tänka om URL i frontend för vi skapar dem oftast
+Laddningstid: så snabbt som möjligt för att användaren ska stanna5 
+Metadata: taggar som user inte ser t.ex head men relevant för sökmotorer eller delningar i social media som facebook
+Viktigt att de är korrekt utformade och finns på plats
+
+Världens mest omfattande informationskälla: internet
+Googlar, läser, testar, diskuterar
+Viktigt att kunna sålla ut vilken information som är relevant (rätt svar kräver rätt fråga)
+Enkla smala frågor för effektiva svar (bryta ned problem i så små delar som möjligt) så man själv förstår
+Viktigt att förstå vad varje rad gör, när man kopierar kod, länka där man fick den ifrån i en kommentar
+Var söker man? Google, stack overflow
+Stack overflow kan ha gammal information, viktigt att se om koden är aktuell eller inte (se kommentarer)
+Videotutorials, youtube, funfunfunctions (avancerat, funktionell programmering)
+Konferenser som Fronteers och Nordic JS
+Dela med videor med klassen
+Officiell dokumentation
+Github och open source, kod och diskussion
+
+
+Aside: Något relaterat till maintaggen men ändå en "aside", man kan ha t.ex biografi om författaren eller länkar till social media
+JS array högsta värde: Math.max-funktionen
+Lodash sortBy: Skapar en array av element och sorterar i stigande ordning efter någonting, t.ex ålder av användare 
+Moment JS isSameOrAfter: Kollar om ett moment(?) är efter eller likadant som ett annat moment, resultat är true eller false
+Reactbugg: Open och unconfirmed
+
+___________________________________
+
+Frontendutvecklare
+Verktyg: transpilering, automatisering, testning, paketbygge och ramverk
+Planering: kravspecifikation (abstrakt till konkret)

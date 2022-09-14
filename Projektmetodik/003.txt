@@ -1,0 +1,215 @@
+projekt: tillfälligt uppdrag
+faser: 
+- uppstart (planering)
+- utveckling
+- lansering/avslutningsfas (efter: underhållsarbete)
+roller:
+- styrande  (överser) och utförande (projektledare/projektmedlemmar)
+syfte (nyttan/avsikten) varför gör vi det här? inte alltid mätbart
+mål (resultat) konkretiserar syftet och är mätbart  har vi nått hit eller inte?
+målgrupp:
+- demografiska
+- livsstil
+- psykografiska (personlighetsdrag etc)
+- normer 
+- medievanor (inkl. devices/sidor som facebook eller 4chan)
+
+kravspecifikation: krav på hur det ska fungera
+från övergripande till mer specifika efter tid
+kunder och beställare behöver ofta hjälp för att ta fram en bra kravspecifikation
+kundkrav: från beställaren, breda och vaga "det ska finnas en blogg"
+allt från organisation till mjukvara
+
+mjukvaruspecifika krav: SRS (software requirement specification)
+delas upp i 2: funktionella och ickefunktionella
+funktionella: hur man interagerar, UI, felhantering och inputkontroll, beräkningsalgoritmer (matematiska operationer), representation i databas
+"det här ska finnas på plats", vad går att göra
+ickefunktionella: inte relaterade till funktionalitet
+- laddningshastighet
+- uptime på servern
+- användarvänlighet (enkelt att förstå)
+
+user stories
+från krav till user story
+det ska finnas en blogg - till - identifiera olika användartyper och ta reda på hur de ska använda produkten för att se vilken funktionalitet som behövs
+As a, I want, so that
+Krav formulerat som slutmål för användaren
+"Som en anställd vill jag kunna lägga upp nya produkter så att besökare kan kommentera dem
+
+Projektmetodik: vattenfall och agilt
+Vattenfall:
+Indelat i faser:
+- requirement
+- design
+- implementation
+- verification (kan bli loop uppåt)
+- maintenance (fixa buggar)
+exampel: husbygge
+fördelar: 
+- förutsägbart slutresultat
+- alla team behöver inte arbeta med projektet samtidigt
+- leder ofta till snabbare leverans i små projekt
+- brukar leda till väl dokumenterade projekt
+- enkla att projektleda
+nackdelar: 
+- svårt att förutse alla krav i förväg vilket kan leda till en dålig produkt
+- extremt dyrt att göra ändringar
+- större risk att kunden blir besviken på slutresultatet
+- kan leda till att olika team inte har så bra kontakt/kommunikation
+
+Agilt
+- korta utvecklingsfaser där arbetet hela tiden utvärderas
+- kan lägga till eller skrota funktionalitet, kan göra omprioriteringar
+- kan göra små släpp löpande
+- alla team är involverade under hela projektet
+
+Kanban och Scrum
+Kanban: en tavla där varje person jobbar med en sak i taget
+Scrum: sprinter (varje fas är en sprint på 1-4 veckor)
+i vanliga fall en sprint i taget
+
+fördelar med agilt
+- beställaren är med och kan förstå och påverka
+- lätt att visualisera
+- blir väldigt flexibelt, kan ta nya behov eller förändringar i beaktning
+- agila team är självorganiserade och motiverade
+- bättre kommunikation eftersom alla är med
+
+nackdelar
+- svårt att veta i förväg hur det blir till slut
+- samma med releasedatum och kostnad
+- kräver högre grad av samarbete mellan olika team
+- agila processer kan ofta bli intensiva och det är svårt att jobba på flera projekt samtidigt
+- väldigt stora projekt är svåra att driva
+
+Kanban
+- Kanban board
+- To do, doing, done
+- Varje person/roll har en sak i doing
+Man kan enkelt se hur flödet flyter på 
+Regelbunden utvärdering kan effektivisera arbetsflödet
+
+Scrum
+sprint (1-4 veckor) med 4 faser:
+- define 
+- build
+- test
+- release
+ofta användar man en mix av scrum och kanban
+vanligaste idag inom mjukvaruutveckling eftersom omständigheter, teknologi rör sig så snabbt
+enkel att förstå
+
+iterativa inkrement (upprepad ökning)
+tre pelare i scrum:
+- transparens: gemensamt språk och bild av "done" 
+- inspektion: regelbundet se över projektet
+- anpassning: göra nödvändiga ändringar vid behov
+
+tre roller:
+- product owner: ansvarar för backlog, se till att alla förstår vad som ska göras, prioritera arbetet, måste vara en enskild person med fullt mandat 
+- scrum master: styr kommunikationen mellan produktägare, teamet och organisationen, ansvarar för allt scrum-relaterat som event/möten/demos, hjälper ofta till med backlog
+ser till att ta bort hinder för utvecklingsteamet, undervisar och coacher hela organisationen så alla förstår scrum
+- development team: UX/programmerare, innehåller alla discipliner som behövs, ansvarar själva för hur de organiserar sig, inga subteams, normalt 3-9 personer
+
+scrum events
+- regelbundet återkommande möten med olika syften
+- vi ska inte ha några andra möten
+- relativt kort maxlängd så att de inte kommer i vägen för arbetet
+
+sprint (hjärtat i scrum)
+- en tidsperiod på högst en månad under vilken en "done" ska ha gjorts
+- följs av nästa sprint tills projektet är klart
+- väldigt försiktig att ändra på sprintmål och omfång under sprintens gång
+
+sprint planning (vad ska vi göra?)
+- innan sprint - sprint planning
+- baserat på backlog, vi tror vi hinner med det här (blir en plan)
+- brukar ta ett par timmar, max en dag
+
+daily scrum
+- väldigt kort möte för att planera dagens arbete
+- alla svarar på följande:
+    - vad gjorde jag igår som leder teamet mot sprintmålet?
+    - vad ska jag göra idag som..^
+    - finns det något som hindrar mig från att göra detta?
+
+sprint review
+- hålls i slutet av sprinten för att inspektera resultat
+- includerar teamet samt beställare
+- brukar vara en demo
+- tillsammans diskuterar man nästa steg
+
+sprint retrospective
+- hur gick det?
+- utfört arbete, verktyg, relationer
+- försöker identifiera problem/kommande risker
+- hitta saker som gör att förbättra i framtiden
+
+product backlog
+- lista på tasks som behöver göras
+- produktägaren är ansvarig för innehåll och prioriteringen
+- krav/funktionalitet
+
+sprint backlog
+- flyttar från allmänna backlog till sprint backlog
+- gör estimat  (timmar, abstrakta poäng, eller t-shirtstorlekar)
+- försöker få en bild över hur mycket teamet klarar av
+
+planning poker
+- alla får kort med värde på t.ex 8 timmar
+- sitter i grupp med en lista som ska estimeras, pratar om dem först
+- när diskussionen är över väljer alla ett kort i hemlighet, sedan visar man (om alla har samma blir det det, annars mer diskussion varför man tror på det man tror på)
+
+definition of done
+- viktigt att alla vet när en task är avslutad
+- kan etableras redan vid kravspecifikation men behöver oftast förtydligas under sprintplaneringen
+
+scrum boards
+- kanbanliknande
+- user stories, to do (tasks), in progress, to verify, done
+
+vad är det för något som måste byggas? user story -> tasks
+
+flows och frames
+- user experience - hela resan för användaren i företaget
+- UX - skapa känslomässiga och meningsfulla upplevelser
+- vad kan användarna göra om de använder din produkt?
+- användarna är i centrum
+
+planering och UX
+- user stories
+
+visualisering av UX
+flowchart (vilka steg och hur användaren interagerar, UML)
+- user journey (karta över hela upplevelsen)
+    - actor - vem?
+    - scenario and expectation
+    - phases
+    - emotions and mindset
+    - insights and opportunities
+- view (views, vad behöver finnas i view just nu)
+- text based flowchart/task flow (fokuserad på själva appen)
+- wireframe (visa element som behövs i en vy, ska kännas som skiss och inte riktig sida, utseendet är inte viktigt)
+bilder rutor med kryss i 
+- wireflow/user flow (kombination av flowchart och wireframes, ser om det finns glapp eller saker vi inte täcker)
+- sitemap (informationswebbplatser eller statiska) hur strukturerar vi information?
+
+user stories till skisser till webbsidan/appen
+
+wireframe
+- inte så detaljerat (designmässigt)
+- verktyg för att ta oss framåt
+hur kan vår produkt hjälpa användaren att uppnå sina mål?
+hur vet jag att vår lösning kommer att fungera?
+- idéfas (få ned idéer på papper, går snabbt att testa olika saker/varianter)
+- valideringsfas (visa sina idéer, testa vad som fungerar, sållar bort dåliga idéer och vässar de som är kvar)
+
+bör:
+- visa all typ av information som ska visas i vyn
+- ha en grundläggande layout och struktur
+- förklara på vilka sätt användaren kan interagera med vyn
+
+bör inte:
+- innehålla faktiska texter eller bilder
+- använda färger/typsnitt eller följa en grafisk profil
+
