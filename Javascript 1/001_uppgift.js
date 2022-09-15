@@ -65,12 +65,20 @@ let myFavoriteSport = "eSport(Dota2)";
 let resultString = `Hej, jag heter ${myName} och är ${myAge} år gammal. Min favoritsport(?) är ${myFavoriteSport}!`;
 console.log(resultString);
 
-/*
-function uppgift() {
-  let paragraph = document.querySelector("p");
 
-  paragraph.innerText = resultString;}
-uppgift();
+//from https://flaviocopes.com/error-document-not-defined/
+if (typeof window !== 'undefined') {
+  //here `window` is available, so `window.document` (or simply `document`) is available too
+
+  function uppgift() {
+    let paragraph = document.querySelector("p");
+  
+    paragraph.innerText = resultString;}
+  uppgift();
+}
+
+
+
 /*
 
 /*
