@@ -25,6 +25,8 @@ console.log(favoriteMovies[5]);
 console.log(favoriteMovies[favoriteMovies.length-1]);
 console.log(favoriteMovies[4]);
 favoriteMovies.pop();
+favoriteMovies.splice(favoriteMovies.length-1, 1);
+favoriteMovies.splice(2, 0, "test"); //lägga till med splice
 console.log(favoriteMovies);
 
 /*Skapa ett objekt för ett husdjur
@@ -80,5 +82,3 @@ if (typeof window !== 'undefined') {
 Javascript array-metoder: https://www.w3schools.com/js/js_array_methods.asp
 Template String Literals: https://www.w3schools.com/js/js_string_templates.asp
 */
-
-
