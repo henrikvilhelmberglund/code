@@ -7,9 +7,9 @@ Skriv ut den fjärde frukten i listan i konsolen.
 Bonus (Hoppa över om du vill): Lägg till en frukt i slutet av listan med hjälp av push-metoden. (JavaScript Array-methods)
 */
 
-favoriteFruits = ["äpple", "päron", "banan", "apelsin", "mango"];
-console.log(favoriteFruits[0]);
-console.log(favoriteFruits[3]);
+let favoriteFruits = ["äpple", "päron", "banan", "apelsin", "mango"];
+console.log("frukt #1:", favoriteFruits[0]);
+console.log("frukt #4:", favoriteFruits[3]);
 favoriteFruits.push("vindruvor");
 console.log(favoriteFruits);
 
@@ -22,6 +22,7 @@ Ta bort den sista boken/filmen i listan med hjälp av en inbyggd metod (Bonus: A
 
 let favoriteMovies = ["Godfather", "Matrix", "LOTR", "Hobbit", "Primer", "One Piece"];
 console.log(favoriteMovies[5]);
+console.log(favoriteMovies[favoriteMovies.length-1]);
 console.log(favoriteMovies[4]);
 favoriteMovies.pop();
 console.log(favoriteMovies);
@@ -46,8 +47,7 @@ let myPet = {
     age: 30,
     isHerbivore: true
   },
-  makeSound: function()
-  {
+  makeSound: function () {
     return this.species + " says woof! Woof!";
   }
 };
@@ -72,15 +72,10 @@ if (typeof window !== 'undefined') {
 
   function uppgift() {
     let paragraph = document.querySelector("p");
-  
-    paragraph.innerText = resultString;}
+    paragraph.innerText = resultString;
+  }
   uppgift();
 }
-
-
-
-/*
-
 /*
 Javascript array-metoder: https://www.w3schools.com/js/js_array_methods.asp
 Template String Literals: https://www.w3schools.com/js/js_string_templates.asp
