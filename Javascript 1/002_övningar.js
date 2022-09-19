@@ -70,7 +70,9 @@ function numberChecker(arr) {
       oddNumbers.push(arr[i]);
     }
   }
-  return evenNumbers.length > oddNumbers.length ? "Even array" : evenNumbers.length === oddNumbers.length ? "Balanced array" : "Odd array"
+  return evenNumbers.length > oddNumbers.length ? "Even array" : 
+  evenNumbers.length === oddNumbers.length ? "Balanced array" : 
+  "Odd array"
 }
 
 console.log(numberChecker(numberArray));
