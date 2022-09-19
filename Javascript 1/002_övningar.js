@@ -36,8 +36,9 @@ console.log(multiplyNumbers(myNumArray));
 Skapa en funktion som loopar igenom en array och kollar om den innehåller “jordgubbar”. Om den innehåller jordgubbar bör den returnera true, annars returneras false.
 */
 
-let myFruitArray = ["bananer", "päron", "jordgubbar"];
-//let myFruitArray = ["bananer", "päron", "äpplen"];
+let myFruitArray = [];
+myFruitArray = ["bananer", "päron", "jordgubbar"];
+//myFruitArray = ["bananer", "päron", "äpplen"];
 function jordgubbCheck(arr) {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === "jordgubbar") {
