@@ -1,5 +1,4 @@
 /*
-
 Ankademin söker utvecklare!
 
 Rektor Sofia på Ankademin har fått klagomål från sina anställda att de har för mycket pappersarbete. Sofia är villig att betala 1,2 miljoner kronor(!) till ett team av utvecklare för att underlätta lärarnas liv genom att automatisera ett antal processer.
@@ -194,7 +193,7 @@ console.log(sendMascotInfo(myObject.mascot));
 
 function headsOrTails() {
   let result = Math.random();
-  return result > 0.5 ? `${result} = Heads!` : `${result} = Tails!`
+  return result < 0.5 ? `${result} = Tails!` : `${result} = Heads!`
 }
 
 console.log(headsOrTails());
