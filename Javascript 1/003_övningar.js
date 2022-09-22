@@ -90,15 +90,27 @@ JavaScript-övningar #3 - Loopar & Array-metoder
 //Skapa en funktion som loopar igenom en array, och returnera alla jämna tal (som en sträng eller som en ny array.)
 
 let numArray = [1, 2, 3, 4, 5, 6, 7, 8, 9,];
-let evenNumbers = numArray.filter(number => number % 2 === 0);
-console.log(evenNumbers);
+let evenNumbers = (arr) => { 
+  return arr.filter(number => number % 2 === 0);
+}
+console.log(evenNumbers(numArray));
 
 //2 - reduce
 // array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
 // Skapa en funktion som loopar igenom en array, och multiplicerar alla tal med varandra. T.ex [2,3,4] ska funktionen returnera 24. (2*3*4 = 24)
 
-let multipliedNumbers = numArray.reduce((total, current) => total *= current);
-console.log(multipliedNumbers);
+let multipliedNumbers = (arr) => arr.reduce((total, current) => total *= current);
+
+console.log(multipliedNumbers(numArray));
+
+/*
+  alt.
+  let total = 1;
+  arr.forEach((num) => {
+    total = total * num;
+  }
+  return total
+  */
 
 //3 - 
 //Skapa en funktion som loopar igenom en array och kollar om den innehåller “jordgubbar”. Om den innehåller jordgubbar bör den returnera true, annars returneras false.
@@ -108,19 +120,33 @@ stringArray = ["bananer", "jordgubbar", "äpplen"];
 //stringArray = ["bananer", "äpplen"];
 
 /* med .filter
-let containsJordgubbar = stringArray.filter(fruit => {
-  return fruit === "jordgubbar";
-})
-let result = containsJordgubbar.length !== 0 ? true : false
-console.log(result);
 */
+let containsJordgubbar = ((fruitArr) => {
 
-let containsJordgubbar = stringArray.map((fruit) => {
-  let outputFruit = fruit === "jordgubbar" ? true : false
-  return outputFruit
+  let result = fruitArr.filter(fruit => {
+    return fruit === "jordgubbar";
+  });
+  return result = result.length !== 0 ? true : false
 });
-containsJordgubbar = containsJordgubbar.some(x => x === true);
-console.log(containsJordgubbar);
+
+console.log(containsJordgubbar(stringArray));
+
+
+let containsJordgubbar2 = (fruitArr => {
+
+  let result = fruitArr.map(fruit => {
+    let outputFruit = fruit === "jordgubbar" ? true : false
+    return outputFruit
+  });
+  return result.some(x => x === true);
+  //return result.includes(true)
+});
+
+let containsJordgubbar3 = (fruitArr => fruitArr.includes("jordgubbar"));
+
+console.log(containsJordgubbar2(stringArray));
+
+console.log(containsJordgubbar3(stringArray));
 
 //4 - 
 //Skapa en funktion som ska kunna ta in en array av siffror. Om arrayen har fler jämna tal än ojämna, returnera “Even array”. Om den har fler ojämna //än jämna tal, returnera “Odd array”. Om den har lika många jämna som ojämna tal, returnera “Balanced array”.
