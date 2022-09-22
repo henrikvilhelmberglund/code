@@ -6,12 +6,12 @@ Rektor Sofia på Ankademin har fått klagomål från sina anställda att de har 
 *Mattelärarna Emelie och Nanthiporn är trötta på att rätta prov. De har efterfrågat en funktion som tar emot tre argument - namn på elev, elevens poäng, och maxpoäng för provet. Om antal poäng är över 50% av maxpoäng, skriv ut i konsolen “ NAMN är godkänd.” Annars skriv ut “NAMN är underkänd” (NAMN = elevens namn).
 */
 
-function gradeStudent(name, points, maxpoints) {
-  return points >= maxpoints * 0.5 ? `${name} är godkänd.` : `${name} är underkänd.`
+function gradeStudent(name, points, maxPoints) {
+  return points >= maxPoints * 0.5 ? `${name} är godkänd.` : `${name} är underkänd.`
 
   //alt.
   /*
-  if (points >= maxpoints * 0.5) {
+  if (points >= maxPoints * 0.5) {
     return name + " är godkänd."
   }
   else {
@@ -28,10 +28,10 @@ console.log(gradeStudent("Henrik", 25, 50));
 *Biologilärarna William och Leo vill också ha en liknande funktion, men de önskar ha tydligare betygsättning. Om eleven har över 50% rätt ska de ha betyget E, om de har över 75% ska de få betyget C, och om de har över 95% rätt ska de få betyget A. Om de får under 50% ska de få icke-godkänt (F).
 */
 
-function gradeStudentFancy(name, points, maxpoints) {
-  return points >= maxpoints * 0.95 ? `${name} får betyg A.` :
-         points >= maxpoints * 0.75 ? `${name} får betyg C.` :
-         points >= maxpoints * 0.50 ? `${name} får betyg E.` : `${name} får betyg F.`
+function gradeStudentFancy(name, points, maxPoints) {
+  return points >= maxPoints * 0.95 ? `${name} får betyg A.` :
+         points >= maxPoints * 0.75 ? `${name} får betyg C.` :
+         points >= maxPoints * 0.50 ? `${name} får betyg E.` : `${name} får betyg F.`
 }
 
 //alt. if, else if, else if, else
@@ -59,6 +59,7 @@ function howManyDifferentGrades(arrPoints) {
   for (let i = 0; i < arrPoints.length; i++) {
     if (gradeStudentLocal(arrPoints[i]) === "A") {
       gradeA += 1;
+      //alt gradeA++;
     }
     else if (gradeStudentLocal(arrPoints[i]) === "C") {
       gradeC += 1;
