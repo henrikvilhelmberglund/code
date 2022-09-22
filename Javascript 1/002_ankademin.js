@@ -100,13 +100,13 @@ myDebitArray = [100, 200, 300];
 myCreditArray = [100, 200, 300];
 //myCreditArray = [100, 200, 300, 400];
 
-function compareDebitCreditFancy(arrDebit, arrCredit) {
+function compareDebitCreditFancy(debitArray, creditArray) {
   let debit = 0; credit = 0;
-  for (let i = 0; i < arrDebit.length; i++) {
-    debit += arrDebit[i];
+  for (let i = 0; i < debitArray.length; i++) {
+    debit += debitArray[i];
   }
-  for (let i = 0; i < arrCredit.length; i++) {
-    credit += arrCredit[i];
+  for (let i = 0; i < creditArray.length; i++) {
+    credit += creditArray[i];
   }
   
   return debit === credit ? `Balansrapport godkänd.` : `Debet och kredit har inte samma värden.`
@@ -135,7 +135,7 @@ let myObject = {
   teacherCount : 10,
   motto : "Anyone can code!",
   favoriteTeacher : "Brandon",
-  isSwedensBestSchool : false,
+  isSwedensBestSchool : true,
   isDogFriendly : true,
   isSnakeFriendly : false,
   locationList : ["Solna", "Ankeborg", "Duckville",],
@@ -173,6 +173,7 @@ logObject(myObject);
 
 function sendSchoolInfo(object) {
   return `Skolans namn är ${object.name} och har ${object.teacherCount} lärare samt ${object.studentCount} elever.${object.isSnakeFriendly ? "" : " Notera att skolan ej är ormvänlig."}${object.isSwedensBestSchool ? " This is the best school in Sweden!" : " It's not the best school in Sweden, but still good!"}`;
+  // object.isSnakeFriendly && "School is not snake friendly"
 }
 
 console.log(sendSchoolInfo(myObject));
