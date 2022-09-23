@@ -1,2 +1,0 @@
-﻿*.log
-Javascript 1/inlämningsuppgift.txt
