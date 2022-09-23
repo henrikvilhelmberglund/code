@@ -1,0 +1,2 @@
+﻿*.log
+inlämningsuppgift.txt
