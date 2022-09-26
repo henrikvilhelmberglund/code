@@ -32,10 +32,42 @@ secondLi.innerText = "changed LI text";
 
 // querySelectorAll träffar alla element
 
-let allLi = document.querySelectorAll("ul li");
+let allLi = document.querySelectorAll("ol li");
 console.log(allLi);
 
+let colorValue = 25;
 allLi.forEach((element, i) => {
-  element.innerText = `changed LI text ${i}`; 
+  element.innerText = `changed LI text ${i}`;
+  element.style.color = `rgb(${i * colorValue} , ${i} , ${i * colorValue})`;  
 });
 
+const myDataArray = [
+  {
+    firstName: "Henrik",
+    lastName: "Berglund",
+    age: 34,
+  }, 
+  {
+    firstName: "Bat",
+    lastName: "Man",
+    age: 30,
+  }
+];
+
+//Loopar ut alla namn
+let nameList = document.querySelector("ul#name-from-JS");
+
+/*
+for (const key in myDataArray) {
+  if (Object.hasOwnProperty.call(myDataArray, key)) {
+    const element = myDataArray[key];
+    console.log(element);
+    // skapa en li-tagg för varje namn
+  }
+}
+*/
+myDataArray.forEach(element => {
+  let li = document.createElement("li");
+  li.innerText = element.firstName + " " + element.lastName;
+  nameList.append(li);
+});
