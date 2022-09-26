@@ -1,3 +1,4 @@
+
 let body = document.querySelector("body");
 let hejP = document.createElement("p");
 hejP.innerText = "Hej från JavaScript!";
