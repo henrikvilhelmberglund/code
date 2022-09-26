@@ -31,5 +31,5 @@ function rgb(r, g, b){
   return `rgb(${r}, ${g}, ${b})`;
 }
 
-myButton.addEventListener("click", changeColor)  ;
+myButton.addEventListener("click", changeColor);
 myButton2.addEventListener("click", changePColor);
