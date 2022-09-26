@@ -1,0 +1,12 @@
+div {
+  border: 2px solid black;
+  min-height: 5px;
+}
+
+#myFavoriteDiv {
+  border: 2px solid red;
+}
+
+.my-paragraph {
+  background-color: peachpuff;
+}
