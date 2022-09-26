@@ -1,0 +1,60 @@
+let cafeName = document.querySelector("#namn");
+cafeName.innerText = "Ankademin Café";
+
+let slogan = document.querySelector("#slogan");
+slogan.innerText = "Stockholms no.1 coding café!";
+
+let html = document.querySelector("html");
+html.style.background = "MistyRose";
+
+let allProducts = document.querySelectorAll(".pris");
+allProducts.forEach(product => {
+  console.log(product);
+  product.innerText = "19 kr";
+});
+
+let frukostMacka = document.querySelector(".produkt:nth-of-type(3) .pris");
+//frukostMacka.innerText = "Frukostmacka";
+//let frukostMackaSpan = document.createElement("span");
+frukostMacka.innerText = "15 kr";
+//frukostMackaSpan.className = "pris";
+//frukostMacka.append(frukostMackaSpan);
+
+let myProduct = "Banan";
+let mySpan = document.createElement("span");
+mySpan.className = "pris";
+mySpan.innerText = " - 5 kr";
+
+let lastLi = document.querySelector("ul li:last-child");
+lastLi.append(myProduct);
+lastLi.append(mySpan);
+
+let div = document.querySelector("div");
+let myH3 = document.createElement("h3");
+myH3.innerText = "Öppettider: Alla dagar kl 18-21";
+div.append(myH3);
+
+let myP = document.createElement("p");
+myP.innerText = "Till Ankademin Café är alla välkomna att sitta och koda och ta en mysig fika!";
+div.append(myP);
+
+let allP = document.querySelectorAll("p");
+allP.forEach(element => {
+  element.style.color = "DarkRed";
+});
+
+
+
+
+
+
+
+
+let body = document.querySelector("body");
+let hejP = document.createElement("p");
+hejP.innerText = "Hej från JavaScript!";
+body.append(hejP);
+
+let myH1 = document.querySelector("h1");
+console.log(myH1);
+myH1.innerText("Rubrik frän JavaScript!");
