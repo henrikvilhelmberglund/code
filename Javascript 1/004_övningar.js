@@ -23,3 +23,19 @@ let myParagraph = document.querySelector(".my-paragraph");
 console.log(myParagraph);
 
 myParagraph.innerText = "Så här kan vi ändra text";
+
+// ändra värdet på andra <li> taggen i vår <ol>
+// querySelector träffar första elementet
+let secondLi = document.querySelector("ol li:nth-child(2)");
+console.log(secondLi);
+secondLi.innerText = "changed LI text";
+
+// querySelectorAll träffar alla element
+
+let allLi = document.querySelectorAll("ul li");
+console.log(allLi);
+
+allLi.forEach((element, i) => {
+  element.innerText = `changed LI text ${i}`; 
+});
+

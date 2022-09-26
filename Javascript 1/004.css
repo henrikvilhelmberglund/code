@@ -10,3 +10,46 @@ div {
 .my-paragraph {
   background-color: peachpuff;
 }
+
+/*
+#top-5-list li:nth-child(4) {
+  color: red;
+}
+*/
+li:nth-child(4) {
+  color: red;
+}
+
+
+/* 
+A (selects elements by their type)
+#id (selects elements by id)
+A B (selects B inside A)
+#id A (selects A inside #id)
+.classname (selects classname by class)
+A.classname (selects classname in A)
+A, B (selects both A and B (or more with more commas))
+* (selects everything)
+A * (selects everything inside A)
+A + B (selects first B that directly follows A (adjacent sibling)
+A ~ B (selects all B that directly follow A (general sibling)
+A > B (selects direct children B of A)
+:first-child (selects first child inside another element)
+:only-child (selects elements that are only child of another element)
+:last-child (selects last child inside another element)
+:nth-child(A) (selects nth child in another element)
+:nth-last-child(A) (selects nth child backwards)
+:first-of-type (selects the first element of a type)
+:nth-of-type(A) (selects nth (or even, odd) of type)
+:nth-of-type(An+B) (selects every nth element starting at B)
+:only-of-type (selects elements that are the only of their type in another element)
+:last-of-type (selects the last element of a type)
+:empty (selects empty elements)
+:not(X)  (selects elements that don't match X)
+[attribute] (selects elements with specific attributes)
+A [attribute] (selects elemenths with specific attributes in A)
+[attribute:"value"] (selects elements with specific attribute with specific attribute value)
+[attribute^="value"] (starts with specific characters) 
+[attribute$="value"] (ends with specific characters)
+[attribute*="value"] (contains specific characters)
+*/
