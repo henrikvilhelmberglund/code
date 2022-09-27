@@ -120,8 +120,8 @@ function createProfileCards(array) {
       `${person.amountOfPets} pets`
       }</li>
       <li class="email">${person.email}</li>
-      <li class="favorite-author">Favorite authors: ${person.favoriteAuthor}</li>
-      <li class="loves-winte">${person.lovesWinter ? `${person.name} loves Winter!` : `${person.name} does not enjoy Winter.`}</li>
+      <li class="favorite-author">Favorite authors: <p>${person.favoriteAuthor}</p></li>
+      <li class="loves-winter">${person.lovesWinter ? `${person.name} loves Winter! <p class="heart"></p>` : `${person.name} does not enjoy <p class="sad">Winter.</p>`}</li>
       `
     });
   }
@@ -132,4 +132,4 @@ myDiv.append(createProfileCardsButton);
 createProfileCardsButton.innerText = "Create profile cards";
 createProfileCardsButton.addEventListener("click", () => createProfileCards(myObjectArray));
 // for debugging
-// createProfileCards(myObjectArray);
+createProfileCards(myObjectArray);
