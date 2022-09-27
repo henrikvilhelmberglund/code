@@ -5,6 +5,7 @@ let body = document.querySelector("body");
 let hejP = document.createElement("p");
 hejP.innerText = "Hej från JavaScript!";
 body.append(hejP);
+let interval;
 
 let myH1 = document.querySelector("h1");
 console.log(myH1);
@@ -16,7 +17,16 @@ myButton2.innerText = "Change p-tag color";
 myButton2.className = "pColorButton";
 body.append(myButton2);
 
+let myButtonAnimated = document.createElement("button");
+myButtonAnimated.innerText = "Change background color (animated)";
+body.append(myButtonAnimated);
+
+let myButtonStop = document.createElement("button");
+myButtonStop.innerText = "Stop animation";
+body.append(myButtonStop);
+
 function changeColor() {
+  body.style.transition = "0.5s";
   body.style.background = rgb(Math.random()*255, Math.random()*255, Math.random()*255);
   return true
 }
@@ -34,6 +44,8 @@ function rgb(r, g, b){
 }
 
 myButton.addEventListener("click", changeColor);
+myButtonAnimated.addEventListener("click", () => interval = setInterval(changeColor, 1000));
+myButtonStop.addEventListener("click", () => clearInterval(interval));
 myButton2.addEventListener("click", changePColor);
 
 /* Uppgift 2+2.5 */
