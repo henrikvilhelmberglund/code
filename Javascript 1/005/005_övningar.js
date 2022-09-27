@@ -10,7 +10,7 @@ myH1.innerText = "Rubrik från JavaScript!";
 
 let myButton = document.querySelector("#background-color-button");
 let myButton2 = document.createElement("button");
-myButton2.innerText = "New button";
+myButton2.innerText = "Change p-tag color";
 myButton2.className = "pColorButton";
 body.append(myButton2);
 
