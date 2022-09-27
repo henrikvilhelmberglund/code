@@ -1,4 +1,13 @@
 /* from https://css-tricks.com/almanac/properties/t/text-shadow/ */
+ul {
+  list-style-type: none;
+}
+
+.name {
+  font-weight: bold;
+  text-underline-offset: 10px;
+}
+
 .otto {
   /* background: #0e8dbc; */
   color: white;
