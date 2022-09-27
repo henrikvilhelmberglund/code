@@ -132,4 +132,4 @@ myDiv.append(createProfileCardsButton);
 createProfileCardsButton.innerText = "Create profile cards";
 createProfileCardsButton.addEventListener("click", () => createProfileCards(myObjectArray));
 // for debugging
-createProfileCards(myObjectArray);
+// createProfileCards(myObjectArray);

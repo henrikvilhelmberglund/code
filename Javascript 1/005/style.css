@@ -1,12 +1,78 @@
-/* from https://css-tricks.com/almanac/properties/t/text-shadow/ */
 ul {
   list-style-type: none;
+}
+
+li {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .name {
   font-weight: bold;
   text-underline-offset: 10px;
 }
+
+.age {
+  font-style: italic;
+}
+
+.pets {
+  font-stretch: ultra-expanded;
+}
+
+.email {
+  color: blue;
+  cursor:pointer;
+}
+
+.favorite-author p {
+  display: inline;
+  background-color: pink;
+  width: 30;
+}
+
+.loves-winter {
+  font-variant: small-caps;
+}
+
+.sad {
+  display: inline;
+  color: gray;
+}
+
+/* from https://css-tricks.com/hearts-in-html-and-css/ */
+
+.heart {
+  background-color: red;
+  display: inline-block;
+  height: 15px;
+  margin: 0 5px;
+  position: relative;
+  top: 0;
+  transform: rotate(-45deg);
+  width: 15px;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  background-color: red;
+  border-radius: 50%;
+  height: 15px;
+  position: absolute;
+  width: 15px;
+}
+
+.heart:before {
+  top: -7.5px;
+  left: 0;
+}
+
+.heart:after {
+  left: 7.5px;
+  top: 0;
+}
+
+/* from https://css-tricks.com/almanac/properties/t/text-shadow/ */
 
 .otto {
   /* background: #0e8dbc; */
