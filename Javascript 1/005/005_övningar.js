@@ -117,7 +117,8 @@ function createProfileCards(array) {
       <li class="pets">${
       person.amountOfPets === 0 ? `no pets` :
       person.amountOfPets === 1 ? `${person.amountOfPets} pet` :
-      `${person.amountOfPets} pets`}</li>
+      `${person.amountOfPets} pets`
+      }</li>
       <li class="email">${person.email}</li>
       <li class="favorite-author">Favorite authors: ${person.favoriteAuthor}</li>
       <li class="loves-winte">${person.lovesWinter ? `${person.name} loves Winter!` : `${person.name} does not enjoy Winter.`}</li>
