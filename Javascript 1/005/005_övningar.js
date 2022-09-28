@@ -52,16 +52,24 @@ myButton2.addEventListener("click", changePColor);
 
 const numArray = [2,5,10,15,20,25,30,50,60,92];
 let myUl = document.createElement("ul");
+
 body.append(myUl);
 numArray.forEach((number, i) => {
-  let myIl = document.createElement("il");
-  myIl.innerText = `${number}\n`;
-  myIl.style.color = 
-  (i+1) % 5 === 0 ? "purple" :
-  number % 2 === 0 ? "red" : 
-  "blue";
-  myUl.append(myIl);
+  let myLi = document.createElement("li");
+  myLi.className = "ordered-numbers";
+  myLi.innerText = `${number}\n`;
+  //myLi.style.color = 
+  //(i+1) % 5 === 0 ? "purple" :
+  //number % 2 === 0 ? "red" : 
+  //"blue";
+
+  myLi.className += number % 2 === 0 ? " even" : " odd";
+    // mellanslag för annars blir det t.ex "ordered-numberseven"
+  myUl.append(myLi);
 });
+// alt lösning av @Viktoria L
+// document.querySelectorAll("li:nth-of-type(5n+1)").forEach((num) => (num.style.color = "purple"));
+// (jag behövde skriva "li:nth-of-type(5n)" för jag hade ingen lista innan
 
 /* Uppgift 3 */
 
