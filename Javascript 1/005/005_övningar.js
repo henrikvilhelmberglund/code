@@ -53,6 +53,12 @@ myButton2.addEventListener("click", changePColor);
 const numArray = [2,5,10,15,20,25,30,50,60,92];
 let myUl = document.createElement("ul");
 
+function myConsole(input) {
+  let p = document.createElement("p");
+  p.innerText = input;
+  document.body.append(p);
+}
+
 body.append(myUl);
 numArray.forEach((number, i) => {
   let myLi = document.createElement("li");
