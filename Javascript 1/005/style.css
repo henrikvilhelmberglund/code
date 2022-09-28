@@ -6,6 +6,10 @@ li {
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+.ordered-numbers.even { color: red; }
+.ordered-numbers.odd { color: blue; }
+.ordered-numbers:nth-of-type(5n) { color: purple; }
+
 .name {
   font-weight: bold;
   text-underline-offset: 10px;
