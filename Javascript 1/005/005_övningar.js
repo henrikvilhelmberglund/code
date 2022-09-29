@@ -25,7 +25,13 @@ let myButtonStop = document.createElement("button");
 myButtonStop.innerText = "Stop animation";
 body.append(myButtonStop);
 
+let test = 5;
+
 function changeColor() {
+  // if we want a function with parameters to run
+  // in the event listener:
+  // functionWithParameters(parameterHere) {};
+  
   body.style.transition = "0.5s";
   body.style.background = rgb(Math.random()*255, Math.random()*255, Math.random()*255);
   return true
@@ -120,6 +126,8 @@ function increaseBlur(ul) {
 }
 
 function createProfileCards(array) {
+  // alt.
+  // myPersonUl.innerHTML = "";
   let result = document.querySelector("div ul");
   if (!result) {
     array.forEach(person => {
