@@ -41,7 +41,7 @@ const cities = [
 // Uppgift 1.a
 
 let body = document.querySelector("body");
-let ul = document.querySelector("#allCities");
+let ulAllCities = document.querySelector("#allCities");
 
 // 1.b
 
@@ -51,12 +51,12 @@ cities.forEach(city => {
   li.style.color = 
   city.code === "FR" ? "blue" :
   city.code === "UK" ? "red" : "";
-  ul.append(li);
+  ulAllCities.append(li);
 });
 
 // Uppgift 2
 
-let ol = document.querySelector("#citiesForFoodies");
+let olCitiesForFoodies = document.querySelector("#citiesForFoodies");
 
 //body.insertBefore(ol, ul);
 let foodieCities = cities.filter(city => city.foodRanking >= 8);
@@ -67,7 +67,7 @@ foodieCities.sort((a, b) => (a.foodRanking > b.foodRanking) ? -1 : 1)
 foodieCities.forEach(city => {
   let li = document.createElement("li");
   li.innerText = city.city + " (" + city.foodRanking + ")";
-  ol.append(li);
+  olCitiesForFoodies.append(li);
 });
 
 // Uppgift 3
