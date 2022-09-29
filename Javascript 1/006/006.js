@@ -76,7 +76,7 @@ let ulSortedByPop = document.querySelector("#sortedByPopulation");
 cities.sort(((a, b) => (a.population > b.population) ? -1 : 1));
 cities.forEach(city => {
   let li = document.createElement("li");
-  li.innerText = city.city + " (" + city.population + ")";
+  li.innerHTML = `${city.city} ${city.population}`;
   ulSortedByPop.append(li);
 });
 
