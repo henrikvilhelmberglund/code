@@ -58,18 +58,36 @@ lastLi.innerHTML = `${banan.name} - <span class="pris">${banan.price} kr</span>`
 
 //let div = document.querySelector("div");
 let div = document.querySelector("#website");
-/*
+
 let myH3 = document.createElement("h3");
 myH3.innerText = "Öppettider: Alla dagar kl 18-21";
 div.append(myH3);
-*/
-div.innerHTML += "<h3>Öppettider: Alla dagar kl 18-21</h3>";
+
+//div.innerHTML += "<h3>Öppettider: Alla dagar kl 18-21</h3>";
 
 let myP = document.createElement("p");
 myP.innerText = "Till Ankademin Café är alla välkomna att sitta och koda och ta en mysig fika!";
 div.append(myP);
+//div.prepend(myP);
+//div.insertBefore(myP, myH3);
 
 let allP = document.querySelectorAll("p");
 allP.forEach(element => {
   element.style.color = "DarkRed";
 });
+
+// event listener
+
+let myButton = document.createElement("button");
+div.append(myButton);
+myButton.innerText = "My Button";
+myButton.addEventListener("click", () => {
+  document.body.style.background = "forestgreen";
+});
+
+let h3 = document.createElement("h3");
+h3.innerText = "here is a h3";
+document.body.append(h3);
+h3.addEventListener("click", () => {
+  document.body.style.background = "crimson";
+})
