@@ -28,13 +28,6 @@ allPrices.forEach(price => {
 */
 document.querySelectorAll(".pris").forEach(price => price.innerText = "19 kr");
 
-let frukostMacka = document.querySelector(".produkt:nth-of-type(3) .pris");
-//frukostMacka.innerText = "Frukostmacka";
-//let frukostMackaSpan = document.createElement("span");
-frukostMacka.innerText = "15 kr";
-//frukostMackaSpan.className = "pris";
-//frukostMacka.append(frukostMackaSpan);
-
 
 let myProduct = "Banan";
 let mySpan = document.createElement("span");
@@ -55,6 +48,17 @@ lastLi.append(mySpan);
 */
 
 lastLi.innerHTML = `${banan.name} - <span class="pris">${banan.price} kr</span>`;
+
+//let frukostMacka = document.querySelector(".produkt:nth-of-type(3) .pris");
+let frukostMacka = document.querySelectorAll(".pris:only-child")[3];
+
+frukostMacka.style.background = "yellow";
+//frukostMacka.innerText = "Frukostmacka";
+//let frukostMackaSpan = document.createElement("span");
+frukostMacka.innerText = "15 kr";
+//frukostMackaSpan.className = "pris";
+//frukostMacka.append(frukostMackaSpan);
+
 
 //let div = document.querySelector("div");
 let div = document.querySelector("#website");

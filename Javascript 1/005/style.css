@@ -1,0 +1,112 @@
+ul {
+  list-style-type: none;
+}
+
+li {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.ordered-numbers.even { color: red; }
+.ordered-numbers.odd { color: blue; }
+.ordered-numbers:nth-of-type(5n) { color: purple; }
+
+
+.name {
+  font-weight: bold;
+  text-underline-offset: 10px;
+}
+
+.age {
+  font-style: italic;
+}
+
+.pets {
+  font-stretch: ultra-expanded;
+}
+
+.email {
+  color: blue;
+  cursor:pointer;
+}
+
+.favorite-author p {
+  display: inline;
+  background-color: pink;
+  width: 30;
+}
+
+.loves-winter {
+  font-variant: small-caps;
+}
+
+.sad {
+  display: inline;
+  color: gray;
+}
+
+/* from https://css-tricks.com/hearts-in-html-and-css/ */
+
+.heart {
+  background-color: red;
+  display: inline-block;
+  height: 15px;
+  margin: 0 5px;
+  position: relative;
+  top: 0;
+  transform: rotate(-45deg);
+  width: 15px;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  background-color: red;
+  border-radius: 50%;
+  height: 15px;
+  position: absolute;
+  width: 15px;
+}
+
+.heart:before {
+  top: -7.5px;
+  left: 0;
+}
+
+.heart:after {
+  left: 7.5px;
+  top: 0;
+}
+
+/* from https://css-tricks.com/almanac/properties/t/text-shadow/ */
+
+.otto {
+  /* background: #0e8dbc; */
+  color: white;
+  text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+}
+
+/* from https://developer.mozilla.org/en-US/docs/Web/CSS/paint-order */
+
+text {
+  font-family: sans-serif;
+  font-size: 60px;
+  font-weight: bold;
+  fill: black;
+  stroke: rgb(75, 220, 240);
+  stroke-width: 2px;
+}
+
+.stroke-behind {
+  paint-order: stroke fill;
+}

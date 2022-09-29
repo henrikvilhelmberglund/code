@@ -1,15 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Static Template</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="005_övningar.js" async defer></script>
   </head>
   <body>
-    <!-- DOM-övningar -->
-    <h1></h1>
-    <button id="background-color-button">Button</button>
-    <script src="005_övningar.js"></script>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <h1 class="otto"></h1>
+    <!-- from https://developer.mozilla.org/en-US/docs/Web/CSS/paint-order -->
+    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="400" height="200">
+      <text x="10" y="50" class="stroke-behind">stroke behind</text>
+    </svg> -->
+    <button id="background-color-button">Change background color</button>
   </body>
 </html>
