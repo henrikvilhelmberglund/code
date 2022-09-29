@@ -6,10 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Static Template</title>
     <link rel="stylesheet" href="style.css" />
+    <script defer src="006.js"></script>
   </head>
   <body>
     <label for="nameInput">Namn</label>
     <input type="text" id="nameInput" />
-    <script src="006.js"></script>
+    <div>
+      <input type="radio" name="color" value="gold" id="colorGold" />
+      <label for="colorGold">Guld</label>
+      <input type="radio" name="color" value="pink" id="colorPink" />
+      <label for="colorPink">Rosa</label>
+      <input type="radio" name="color" value="white" id="colorWhite"/>
+      <label for="colorWhite">Vit</label>
+    </div>
+    <div>
+      <select name="type" id="typeDropdown"></select>
+    </div>
+    <div>
+      <button id="buyCar">Buy car</button>
+    </div>
+    <h2 id="messageBox"></h2>
   </body>
 </html>
