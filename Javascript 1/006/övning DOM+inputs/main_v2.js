@@ -1,7 +1,37 @@
 // Uppgift 1
 let body = document.querySelector("body");
-let div = document.createElement("div");
-body.append(div);
+let div = create("div", body);
+
+function query(tag) {
+  return document.querySelector(tag);
+}
+
+function create(tag, appendWhere, ...argv) {
+  let createdTag = document.createElement(tag);
+  
+  console.log(argv.length);
+
+  if (argv.length === 0) {
+    appendWhere.append(createdTag);
+    return createdTag;
+  }
+  else if (argv.length === 1) {
+    createdTag.innerText = argv[0];
+    appendWhere.append(createdTag);
+    return createdTag;
+  }
+  else if (argv.length === 2) {
+    createdTag.innerText = argv[0];
+    if (tag === "input") {
+      createdTag.addEventListener("input", argv[1]);
+    }
+    else if (tag === "button") {
+      createdTag.addEventListener("click", argv[1]);
+    }
+    appendWhere.append(createdTag);
+    return createdTag;
+  }
+}
 
 function deleteLi(event) {
   event.target.parentNode.remove();
@@ -9,25 +39,8 @@ function deleteLi(event) {
   return true
 }
 
-function isInputValid() {
-  if (todoInput.value === "") { 
-    errorMessage.innerText = "Du måste fylla i fältet för att lägga till ett ärende.";
-    return false 
-  }
-  else { return true }
-}
 
-let todoLabel = document.createElement("label");
-todoLabel.innerText = "Vad ska göras? "
-div.append(todoLabel);
-
-let todoInput = document.createElement("input");
-todoInput.type = "text";
-div.append(todoInput);
-
-let todoButton = document.createElement("button");
-todoButton.innerText = "Lägg till ärende";
-todoButton.addEventListener("click", () => {
+function todoButtonFunc() {
   if (!isInputValid()) { return };
   errorMessage.innerText = "";
 
@@ -40,98 +53,68 @@ todoButton.addEventListener("click", () => {
 // b.
 
   else {
-    let li = document.createElement("li");
-    li.innerText = todoInput.value + " ";
-    let deleteButton = document.createElement("button");
-    deleteButton.addEventListener("click", (event) => deleteLi(event));
-    deleteButton.innerText = "Ta bort";
-    li.append(deleteButton);
-    todoList.append(li);
+    let li = create("li", todoList, todoInput.value + " ");
+    create("button", li, "Ta bort", deleteLi);
     todoInput.value = "";
   }
-});
-div.append(todoButton);
+}
 
-let todoList = document.createElement("ol");
-div.append(todoList);
+function isInputValid() {
+  if (todoInput.value === "") { 
+    errorMessage.innerText = "Du måste fylla i fältet för att lägga till ett ärende.";
+    return false 
+  }
+  else { return true }
+}
 
-let errorMessage = document.createElement("p");
+let todoLabel = create("label", div, "Vad ska göras?");
+let todoInput = create("input", div);
+let todoButton = create("button", div, "Lägg till ärende", todoButtonFunc);
+let todoList = create("ol", div);
+let errorMessage = create("p", div);
 errorMessage.id = "errorMessage";
-div.append(errorMessage);
-
 
 // Uppgift 2
 
-let calcDiv = document.createElement("div");
-body.append(calcDiv);
-
-let calcA = document.createElement("input");
-calcA.type = "text";
-calcDiv.append(calcA);
-
-let br = document.createElement("br");
-calcDiv.append(br);
-
-let calcB = document.createElement("input");
-calcB.type = "text";
-calcDiv.append(calcB);
-
-let calcButtonPlus = document.createElement("button");
-calcButtonPlus.addEventListener("click", (event) => showCalcResult(event, "+"));
-calcButtonPlus.innerText = "+";
-calcDiv.append(calcButtonPlus);
+let calcDiv = create("div", body);
+let calcA = create("input", calcDiv);
+let br = create("br", calcDiv);
+let calcB = create("input", calcDiv);
+let calcButtonPlus = create("button", calcDiv, "+", (event) => showCalcResult(event, "+"));
 
 // a.
 
-let calcButtonMul = document.createElement("button");
-calcButtonMul.addEventListener("click", (event) => showCalcResult(event, "*"));
-calcButtonMul.innerText = "*";
-calcDiv.append(calcButtonMul);
+let calcButtonMul = create("button", calcDiv, "*", (event) => showCalcResult(event, "*"));
 
 // b.
 
-let calcButtonMinus = document.createElement("button");
-calcButtonMinus.addEventListener("click", (event) => showCalcResult(event, "-"));
-calcButtonMinus.innerText = "-";
-calcDiv.append(calcButtonMinus);
-
-
-let calcResult = document.createElement("p");
+let calcButtonMinus = create("button", calcDiv, "-", (event) => showCalcResult(event, "-"));
+let calcResult = create("p", calcDiv);
 
 function showCalcResult(event, type) {
-  if (type === "+") { 
-    calcResult.innerText = parseFloat(calcA.value) + parseFloat(calcB.value) 
+  (type === "+") ? calcResult.innerText = parseFloat(calcA.value) + parseFloat(calcB.value) :
+  (type === "*") ? calcResult.innerText = parseFloat(calcA.value) * parseFloat(calcB.value) :
+  (type === "-") ? calcResult.innerText = parseFloat(calcA.value) - parseFloat(calcB.value) : ""
+
+  if (calcResult.innerText < 0)  { calcResult.innerText = `Resultatet blev mindre än 0. Denna kalkylator visar bara positiva resultat.
+    När du använder subtraktion måste talet i det övre fältet vara högre än i det lägre.`
   }
-  else if (type === "*") { 
-    calcResult.innerText = parseFloat(calcA.value) * parseFloat(calcB.value)  
-  }
-  else if (type === "-") {
-    calcResult.innerText = parseFloat(calcA.value) - parseFloat(calcB.value)  
-    if (calcResult.innerText < 0) {
-      calcResult.innerText = `Resultatet blev mindre än 0. Denna kalkylator visar bara positiva resultat.
-      När du använder subtraktion måste talet i det övre fältet vara högre än i det lägre.`
-    }
-  }
-  calcDiv.append(calcResult);
 }
 
-let newBr = document.createElement("br");
-body.append(newBr);
+let newBr = create("br", body);
 
 // Uppgift 3
 
-let numberDiv = document.createElement("div");
-body.append(numberDiv);
-
-let number = document.createElement("input");
-number.type = "text";
+let numberDiv = create("div", body);
+let number = create("input", numberDiv, "", (event) => numberEdited(event));
 number.id = "numberInput"
-number.addEventListener("input", (event) => numberEdited(event));
+number.style.fontSize = "32px";
 
 function numberEdited(event) {
   aboveP.innerText = "";
   let value = event.target.value;
   let numberText = document.querySelector("#numberInput");
+  
   (parseFloat(value) < 4) ? 
   numberText.style.color = "red" :
   (parseFloat(value) >= 4 && parseFloat(value) <= 7) ?
@@ -142,16 +125,12 @@ function numberEdited(event) {
   aboveEleven();
 }
 
-numberDiv.append(number);
-
-let aboveP = document.createElement("p");
+let aboveP = create("p", numberDiv, "");
 
 function aboveEleven() {
-  let numberText = document.querySelector("#numberInput");
   number.value = "";
-  let aboveElevenErrorMsg = "Din input var för hög, skriv ett nummer mellan 0 och 11."
+  let aboveElevenErrorMsg = "Din input var för hög eller felaktig, skriv ett nummer mellan 0 och 11."
   aboveP.innerText = aboveElevenErrorMsg;
-  numberDiv.append(aboveP);
 }
 
 
