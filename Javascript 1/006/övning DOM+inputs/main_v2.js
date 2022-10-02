@@ -92,9 +92,15 @@ let calcButtonMinus = create("button", calcDiv, "-", (event) => showCalcResult(e
 let calcResult = create("p", calcDiv);
 
 function showCalcResult(event, type) {
+  /*
   (type === "+") ? calcResult.innerText = parseFloat(calcA.value) + parseFloat(calcB.value) :
   (type === "*") ? calcResult.innerText = parseFloat(calcA.value) * parseFloat(calcB.value) :
   (type === "-") ? calcResult.innerText = parseFloat(calcA.value) - parseFloat(calcB.value) : ""
+  */
+  (type === "+") ? calcResult.innerText = +calcA.value + +calcB.value :
+  (type === "*") ? calcResult.innerText = +calcA.value * +calcB.value :
+  (type === "-") ? calcResult.innerText = +calcA.value - +calcB.value : ""
+  
 
   if (calcResult.innerText < 0)  { calcResult.innerText = `Resultatet blev mindre än 0. Denna kalkylator visar bara positiva resultat.
     När du använder subtraktion måste talet i det övre fältet vara högre än i det lägre.`
