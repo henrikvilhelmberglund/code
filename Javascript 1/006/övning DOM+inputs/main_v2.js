@@ -1,5 +1,8 @@
 // Uppgift 1
 let body = document.querySelector("body");
+// let body = document.querySelector("h2 + *");
+// let body = document.querySelector("input[type="test]");
+
 let div = create("div", body);
 
 function query(tag) {
@@ -39,6 +42,7 @@ function deleteLi(event) {
   return true
 }
 
+// alt. let currentTodos = 0;
 
 function todoButtonFunc() {
   if (!isInputValid()) { return };
@@ -47,8 +51,10 @@ function todoButtonFunc() {
 // a.
 
   if (document.querySelectorAll("li").length >= 5) {
+    //alt. if (document.querySelectorAll("ul li").length >= 5) {
     errorMessage.innerText = "Det kan max finnas 5 ärenden.";
   }
+  // alt. currentTodos++;
 
 // b.
 
