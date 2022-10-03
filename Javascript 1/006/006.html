@@ -12,7 +12,7 @@
     <label for="nameInput">Namn</label>
     <input type="text" id="nameInput" />
     <div>
-      <input type="radio" name="color" value="gold" id="colorGold" />
+      <input type="radio" name="color" value="gold" id="colorGold" checked="true" />
       <label for="colorGold">Guld</label>
       <input type="radio" name="color" value="pink" id="colorPink" />
       <label for="colorPink">Rosa</label>
@@ -20,10 +20,21 @@
       <label for="colorWhite">Vit</label>
     </div>
     <div>
-      <select name="type" id="typeDropdown"></select>
+      <select name="type" id="typeDropdown">
+      <option value="Tesla">Tesla</option>
+      <option value="Bentley">Bentley</option>
+      <option value="Toyota" selected="true">Toyota</option>
+    </select>
+    </div>
+    <div>
+      <label for="terms">I agree to sell my soul for this car</label>
+      <input type="checkbox" name="terms" id="terms" />
     </div>
     <div>
       <button id="buyCar">Buy car</button>
+      <button id="click1">Click</button>
+      <button id="click2">Click me!!</button>
+      <button id="click3">CLICK ME!!!</button>
     </div>
     <h2 id="messageBox"></h2>
   </body>
