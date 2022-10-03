@@ -37,7 +37,8 @@ function create(tag, appendWhere, ...argv) {
 }
 
 function deleteLi(event) {
-  event.target.parentNode.remove();
+  //event.target.parentNode.remove();
+  event.target.parentElement.remove();
   document.querySelector("#errorMessage").innerText = "";
   return true
 }
