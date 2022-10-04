@@ -10,17 +10,24 @@
 </head>
 
 <body>
+  <p>Test!</p>
   <!-- Container for both divs -->
   <div>
+    <input type="text" id="lag-a-input-field" />
+    <button id="lag-a-add-player-button">Add player</button>
+  </div>
+  <div style="display: flex">
     <!-- Lag A-div -->
-    <div id="lag-a-div">
-      <input type="text" id="lag-a-input-field" />
-      <button id="lag-a-add-player-button">Add player</button>
+    <div id="lag-a-div" style="flex: 1">
+      <input type="text" id="lag-a-name-input-field" />
+      <button id="lag-a-name-button">Change Teamname</button>
       <h2 id="lag-a-h2">Lag A</h2>
       <ul id="lag-a-ul"></ul>
     </div>
     <!-- Lag B-div -->
-    <div id="lag-b-div">
+    <div id="lag-b-div" style="flex: 1">
+      <input type="text" id="lag-b-name-input-field" />
+      <button id="lag-b-name-button">Change Teamname</button>
       <h2 id="lag-b-h2">Lag B</h2>
       <ul id="lag-b-ul"></ul>
     </div>

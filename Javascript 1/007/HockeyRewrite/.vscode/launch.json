@@ -1,16 +1,17 @@
 {
   "configurations": [
     {
-      "name": "Python",
-      "type": "python",
+      "name": "Launch Edge",
       "request": "launch",
-      "program": "${file}"
+      "type": "msedge",
+      "url": "http://localhost:3000/index.html",
+      "webRoot": "${workspaceFolder}"
     },
     {
-      "type": "pwa-chrome",
+      "type": "msedge",
       "name": "http://127.0.0.1:3000/index.html",
       "request": "launch",
-      "url": "http://127.0.0.1:3000/index.html"
+      "url": "http://127.0.0.1:3000/index.html",
     }
   ]
 }

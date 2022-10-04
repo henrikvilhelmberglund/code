@@ -26,6 +26,11 @@ let lagAInputField = document.querySelector("#lag-a-input-field");
 let lagAAddPlayerButton = document.querySelector("#lag-a-add-player-button");
 let lagAUl = document.querySelector("#lag-a-ul");
 let lagBUl = document.querySelector("#lag-b-ul");
+let lagANameInputField = document.querySelector("#lag-a-name-input-field");
+let lagANameButton = document.querySelector("#lag-a-name-button");
+let lagBNameInputField = document.querySelector("#lag-b-name-input-field");
+let lagBNameButton = document.querySelector("#lag-b-name-button");
+
 
 // 1.
 /*
@@ -65,6 +70,18 @@ function changeTeam(event, li) {
   }
 }
 
+function changeTeamName(event) {
+  let whichTeam = event.target.parentElement.id;
+  console.log("hello!!!");
+  if (whichTeam === "lag-a-div") {
+    lagAh2.innerText = lagANameInputField.value;
+  }
+  else if (whichTeam === "lag-b-div") {
+    lagBh2.innerText = lagBNameInputField.value;
+    console.log("hello");
+  }
+}
+
 function addPlayer(event) {
   let li = document.createElement("li");
   li.innerText = lagAInputField.value;
@@ -93,6 +110,9 @@ function addPlayer(event) {
 }
 
 lagAAddPlayerButton.addEventListener("click", (event) => addPlayer(event));
+lagANameButton.addEventListener("click", (event) => changeTeamName(event));
+lagBNameButton.addEventListener("click", (event) => changeTeamName(event));
+
 
 
 
