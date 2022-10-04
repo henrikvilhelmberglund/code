@@ -18,7 +18,6 @@
 
 */
 
-console.log("testing!");
 
 let lagADiv = document.querySelector("#lag-a-div");
 let lagBDiv = document.querySelector("#lag-b-div");
