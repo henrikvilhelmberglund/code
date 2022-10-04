@@ -1,17 +1,81 @@
 {
   "configurations": [
     {
+      "name": "Open App (Headless)",
+      "request": "launch",
+      "type": "vscode-edge-devtools.debug",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
       "name": "Launch Edge",
       "request": "launch",
       "type": "msedge",
       "url": "http://localhost:3000/index.html",
-      "webRoot": "${workspaceFolder}"
+      "webRoot": "${workspaceFolder}",
+      "runtimeExecutable": "dev"
     },
     {
       "type": "msedge",
       "name": "http://127.0.0.1:3000/index.html",
       "request": "launch",
-      "url": "http://127.0.0.1:3000/index.html",
+      "url": "http://127.0.0.1:3000/index.html"
+    },
+    {
+      "type": "pwa-msedge",
+      "name": "Launch Microsoft Edge",
+      "request": "launch",
+      "runtimeArgs": [
+        "--remote-debugging-port=9222"
+      ],
+      "url": "127.0.0.1:3000",
+      "presentation": {
+        "hidden": true
+      }
+    },
+    {
+      "type": "pwa-msedge",
+      "name": "Launch Microsoft Edge in headless mode",
+      "request": "launch",
+      "runtimeArgs": [
+        "--headless",
+        "--remote-debugging-port=9222"
+      ],
+      "url": "file://c:\\javascriptstuff\\code\\Javascript 1\\007\\HockeyRewrite\\index.html",
+      "presentation": {
+        "hidden": true
+      }
+    },
+    {
+      "type": "vscode-edge-devtools.debug",
+      "name": "Open Edge DevTools",
+      "request": "attach",
+      "url": "file://c:\\javascriptstuff\\code\\Javascript 1\\007\\HockeyRewrite\\index.html",
+      "presentation": {
+        "hidden": true
+      }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Launch Edge Headless and attach DevTools",
+      "configurations": [
+        "Launch Microsoft Edge in headless mode",
+        "Open Edge DevTools"
+      ]
+    },
+    {
+      "name": "Launch Edge and attach DevTools",
+      "configurations": [
+        "Launch Microsoft Edge",
+        "Open Edge DevTools"
+      ]
+    },
+    {
+      "name": "Only debug tools",
+      "configurations": [
+        "Open App (Headless)",
+      ]
     }
   ]
 }
