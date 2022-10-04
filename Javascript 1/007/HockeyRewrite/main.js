@@ -41,19 +41,33 @@ lagADiv.append(lagAInputField);
 
 // 2.
 
+function playerCount() {
+  let lagAMembers = document.querySelectorAll("#lag-a-ul li");
+  let lagBMembers = document.querySelectorAll("#lag-b-ul li");
+  return ({ a: lagAMembers.length, b: lagBMembers.length });
+}
+
 function leaveTeam(event, li) {
-  li.parentNode.remove(li);
+  li.remove(li);
 }
 
 function changeTeam(event, li) {
-  console.log("hi");
+  let moveFrom = li.parentElement.id;
+  if (moveFrom === "lag-a-ul") {
+    if (playerCount().b < 5) {
+      lagBUl.append(li);
+    }
+  }
+  else if (moveFrom === "lag-b-ul") {
+    if (playerCount().a < 5) {
+      lagAUl.append(li);
+    }
+  }
 }
 
 function addPlayer(event) {
   let li = document.createElement("li");
   li.innerText = lagAInputField.value;
-  let lagAMembers = document.querySelectorAll("#lag-a-ul li");
-  let lagBMembers = document.querySelectorAll("#lag-b-ul li");
 
   // 5.
   let leaveTeamButton = document.createElement("button");
@@ -62,16 +76,16 @@ function addPlayer(event) {
 
   // 7.
   let changeTeamButton = document.createElement("button");
-  changeTeamButton.innerText = "Change Teamname";
+  changeTeamButton.innerText = "Change Team";
   changeTeamButton.addEventListener("click", (event) => changeTeam(event, li));
   // 3.
-  if (lagAMembers.length < 5) {
+  if (playerCount().a < 5) {
     lagAUl.append(li);
     li.append(leaveTeamButton);
     li.append(changeTeamButton);
   }
   // 4.
-  else if (lagAMembers.length >= 5 && lagBMembers.length < 5) {
+  else if (playerCount().a >= 5 && playerCount().b < 5) {
     lagBUl.append(li);
     li.append(leaveTeamButton);
     li.append(changeTeamButton);
