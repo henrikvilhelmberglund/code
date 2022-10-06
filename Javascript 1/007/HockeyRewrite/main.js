@@ -113,12 +113,3 @@ lagAAddPlayerButton.addEventListener("click", (event) => addPlayer(event));
 lagANameButton.addEventListener("click", (event) => changeTeamName(event));
 lagBNameButton.addEventListener("click", (event) => changeTeamName(event));
 
-
-
-
-// 5.
-
-// 6.
-
-// 7.
-

@@ -11,7 +11,7 @@ function query(tag) {
 
 function create(tag, appendWhere, ...argv) {
   let createdTag = document.createElement(tag);
-  
+
   console.log(argv.length);
 
   if (argv.length === 0) {
@@ -40,16 +40,16 @@ function deleteLi(event) {
   //event.target.parentNode.remove();
   event.target.parentElement.remove();
   document.querySelector("#errorMessage").innerText = "";
-  return true
+  return true;
 }
 
 // alt. let currentTodos = 0;
 
 function todoButtonFunc() {
-  if (!isInputValid()) { return };
+  if (!isInputValid()) { return; };
   errorMessage.innerText = "";
 
-// a.
+  // a.
 
   if (document.querySelectorAll("li").length >= 5) {
     //alt. if (document.querySelectorAll("ul li").length >= 5) {
@@ -57,7 +57,7 @@ function todoButtonFunc() {
   }
   // alt. currentTodos++;
 
-// b.
+  // b.
 
   else {
     let li = create("li", todoList, todoInput.value + " ");
@@ -67,11 +67,11 @@ function todoButtonFunc() {
 }
 
 function isInputValid() {
-  if (todoInput.value === "") { 
+  if (todoInput.value === "") {
     errorMessage.innerText = "Du måste fylla i fältet för att lägga till ett ärende.";
-    return false 
+    return false;
   }
-  else { return true }
+  else { return true; }
 }
 
 let todoLabel = create("label", div, "Vad ska göras?");
@@ -85,8 +85,10 @@ errorMessage.id = "errorMessage";
 
 let calcDiv = create("div", body);
 let calcA = create("input", calcDiv);
+calcA.type = "number";
 let br = create("br", calcDiv);
 let calcB = create("input", calcDiv);
+calcB.type = "number";
 let calcButtonPlus = create("button", calcDiv, "+", (event) => showCalcResult(event, "+"));
 
 // a.
@@ -104,13 +106,23 @@ function showCalcResult(event, type) {
   (type === "*") ? calcResult.innerText = parseFloat(calcA.value) * parseFloat(calcB.value) :
   (type === "-") ? calcResult.innerText = parseFloat(calcA.value) - parseFloat(calcB.value) : ""
   */
-  (type === "+") ? calcResult.innerText = +calcA.value + +calcB.value :
-  (type === "*") ? calcResult.innerText = +calcA.value * +calcB.value :
-  (type === "-") ? calcResult.innerText = +calcA.value - +calcB.value : ""
-  
 
-  if (calcResult.innerText < 0)  { calcResult.innerText = `Resultatet blev mindre än 0. Denna kalkylator visar bara positiva resultat.
-    När du använder subtraktion måste talet i det övre fältet vara högre än i det lägre.`
+  (type === "+") ? calcResult.innerText = +calcA.value + +calcB.value :
+    (type === "*") ? calcResult.innerText = +calcA.value * +calcB.value :
+      (type === "-") ? calcResult.innerText = +calcA.value - +calcB.value : "";
+
+
+  // calcA.valueAsNumber
+  // ger nummer direkt
+
+  // kan ha event.target istället för parameter
+
+  // teknisk skuld - snabbast idag men skapar problem i framtiden
+
+
+  if (calcResult.innerText < 0) {
+    calcResult.innerText = `Resultatet blev mindre än 0. Denna kalkylator visar bara positiva resultat.
+    När du använder subtraktion måste talet i det övre fältet vara högre än i det lägre.`;
   }
 }
 
@@ -120,29 +132,29 @@ let newBr = create("br", body);
 
 let numberDiv = create("div", body);
 let number = create("input", numberDiv, "", (event) => numberEdited(event));
-number.id = "numberInput"
+number.id = "numberInput";
 number.style.fontSize = "32px";
 
 function numberEdited(event) {
   aboveP.innerText = "";
   let value = event.target.value;
   let numberText = document.querySelector("#numberInput");
-  
-  (parseFloat(value) < 4) ? 
-  numberText.style.color = "red" :
-  (parseFloat(value) >= 4 && parseFloat(value) <= 7) ?
-  numberText.style.color = "yellow" :
-  (parseFloat(value) > 7 && parseFloat(value) <= 11) ?
-  numberText.style.color = "green" :
-  (value === "") ? "cool" :
-  aboveEleven();
+
+  (parseFloat(value) < 4) ?
+    numberText.style.color = "red" :
+    (parseFloat(value) >= 4 && parseFloat(value) <= 7) ?
+      numberText.style.color = "yellow" :
+      (parseFloat(value) > 7 && parseFloat(value) <= 11) ?
+        numberText.style.color = "green" :
+        (value === "") ? "cool" :
+          aboveEleven();
 }
 
 let aboveP = create("p", numberDiv, "");
 
 function aboveEleven() {
   number.value = "";
-  let aboveElevenErrorMsg = "Din input var för hög eller felaktig, skriv ett nummer mellan 0 och 11."
+  let aboveElevenErrorMsg = "Din input var för hög eller felaktig, skriv ett nummer mellan 0 och 11.";
   aboveP.innerText = aboveElevenErrorMsg;
 }
 
