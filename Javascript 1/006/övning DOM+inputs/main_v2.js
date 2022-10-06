@@ -140,18 +140,19 @@ number.style.fontSize = "32px";
 
 function numberEdited(event) {
   aboveP.innerText = "";
-  let value = event.target.value;
+  let value = +event.target.value;
   let numberText = document.querySelector("#numberInput");
 
 
-  (+value < 4) ?
-    numberText.style.color = "red" :
-    (+value <= 7) ?
-      numberText.style.color = "yellow" :
-      (+value <= 11) ?
-        numberText.style.color = "green" :
-        (value === "") ? "cool" :
-          aboveEleven();
+  (value > 11 || value < 0) ?
+    // error
+    aboveEleven() :
+    (value < 4) ?
+      numberText.style.color = "red" :
+      (value <= 7) ?
+        numberText.style.color = "yellow" :
+        (value <= 11) ?
+          numberText.style.color = "green" : "";
 }
 
 let aboveP = create("p", numberDiv, "");
