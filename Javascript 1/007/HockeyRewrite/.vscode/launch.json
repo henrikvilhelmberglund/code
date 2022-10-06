@@ -41,7 +41,7 @@
         "--headless",
         "--remote-debugging-port=9222"
       ],
-      "url": "file://c:\\javascriptstuff\\code\\Javascript 1\\007\\HockeyRewrite\\index.html",
+      "url": "http://localhost:5500",
       "presentation": {
         "hidden": true
       }
@@ -50,7 +50,7 @@
       "type": "vscode-edge-devtools.debug",
       "name": "Open Edge DevTools",
       "request": "attach",
-      "url": "file://c:\\javascriptstuff\\code\\Javascript 1\\007\\HockeyRewrite\\index.html",
+      "url": "http://localhost:5500",
       "presentation": {
         "hidden": true
       }
