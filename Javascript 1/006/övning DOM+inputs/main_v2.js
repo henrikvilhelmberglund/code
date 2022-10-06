@@ -119,6 +119,8 @@ function showCalcResult(event, type) {
 
   // teknisk skuld - snabbast idag men skapar problem i framtiden
 
+  // eval() kan köras istället för + * etc
+
 
   if (calcResult.innerText < 0) {
     calcResult.innerText = `Resultatet blev mindre än 0. Denna kalkylator visar bara positiva resultat.
@@ -133,6 +135,7 @@ let newBr = create("br", body);
 let numberDiv = create("div", body);
 let number = create("input", numberDiv, "", (event) => numberEdited(event));
 number.id = "numberInput";
+number.type = "number";
 number.style.fontSize = "32px";
 
 function numberEdited(event) {
@@ -140,11 +143,12 @@ function numberEdited(event) {
   let value = event.target.value;
   let numberText = document.querySelector("#numberInput");
 
-  (parseFloat(value) < 4) ?
+
+  (+value < 4) ?
     numberText.style.color = "red" :
-    (parseFloat(value) >= 4 && parseFloat(value) <= 7) ?
+    (+value <= 7) ?
       numberText.style.color = "yellow" :
-      (parseFloat(value) > 7 && parseFloat(value) <= 11) ?
+      (+value <= 11) ?
         numberText.style.color = "green" :
         (value === "") ? "cool" :
           aboveEleven();
@@ -155,6 +159,7 @@ let aboveP = create("p", numberDiv, "");
 function aboveEleven() {
   number.value = "";
   let aboveElevenErrorMsg = "Din input var för hög eller felaktig, skriv ett nummer mellan 0 och 11.";
+  console.log("hi");
   aboveP.innerText = aboveElevenErrorMsg;
 }
 
