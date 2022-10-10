@@ -10,3 +10,5 @@ Hur många Frontendutvecklare har ni?
 
 Hur söker man LIA hos er?
 
+Om konsult, hur har ni gjort med LIA-praktikanter? Har ni skickat ut dem på uppdrag?
+
