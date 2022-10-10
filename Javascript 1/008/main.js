@@ -40,6 +40,8 @@ let students = [
 /*
 Skapa en grupp radio-buttons för olika utbildningar (t.ex Frontend, Java, UX etc.). Skapa sedan en Show students-knapp som när du klickar på den, skriver ut samtliga personer som går i den utbildningen i DOM:en. OBS! Det ska finnas ett alternativ för att skriva ut alla utbildningar.
 */
+// skulle egentligen ha Alla-radiobutton
+
 let showStudents = document.querySelector("#showStudents");
 let showAllStudents = document.querySelector("#showAllStudents");
 let list = document.querySelector("#students");
