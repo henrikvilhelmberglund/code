@@ -17,18 +17,35 @@
 
 <body>
   <div>
-    <input type="radio" id="Frontend" name="education" value="Frontend" />
+    <input type="radio" class="education" name="education" value="Frontend" id="Frontend" />
     <label for="Frontend">Frontend</label><br />
-    <input type="radio" id="UX-design" name="education" value="UX-design" />
+    <input type="radio" class="education" name="education" value="UX-design" id="UX-design" />
     <label for="UX-design">UX-design</label><br />
-    <input type="radio" id="Java" name="education" value="Java" />
+    <input type="radio" class="education" name="education" value="Java" id="Java" />
     <label for="Java">Java</label><br />
-
+  </div>
+  <br />
+  <div>
+    <input type="radio" class="city" name="city" value="Stockholm" id="Stockholm" />
+    <label for="Stockholm">Stockholm</label><br />
+    <input type="radio" class="city" name="city" value="New York" id="New York" />
+    <label for="New York">New York</label><br />
+    <input type="radio" class="city" name="city" value="Täby" id="Täby" />
+    <label for="Täby">Täby</label><br />
     <button id="showStudents">Show students</button><br />
     <button id="showAllStudents">Show all students</button>
     <ul id="students"></ul>
     <input type="checkbox" id="myCheck" onclick="myFunction()">I am a teacher, I promise</input>
+  </div><br><br>
+  <div>
+    <select id="years" name="years">
+      <option value="year1" number="1">year 1</option>
+      <option value="year2" number="2">year 2</option>
+      <option value="allYears">all years</option>
+    </select>
+    <button id="yearsBtn">Sort years</button>
   </div>
+
 </body>
 
 </html>
