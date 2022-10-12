@@ -18,7 +18,7 @@
 <body>
   <h1>Checkboxes radio-buttons</h1>
   <div id="div-1">
-    <input type="radio" name="education" value="Frontend" id="frontend" class="education">
+    <input type="radio" name="education" value="Frontend" id="frontend" class="education" checked>
     <label for="frontend">Frontend</label><br>
     <input type="radio" name="education" value="UX-design" id="ux-design" class="education">
     <label for="ux-design">UX-design</label><br>
@@ -27,8 +27,9 @@
     <input type="radio" name="education" value="all" id="all" class="education">
     <label for="all">All</label><br>
   </div>
+  <br>
   <div id="div-2">
-    <input type="radio" name="city" value="Stockholm" id="stockholm" class="city">
+    <input type="radio" name="city" value="Stockholm" id="stockholm" class="city" checked>
     <label for="stockholm">Stockholm</label><br>
     <input type="radio" name="city" value="Täby" id="täby" class="city">
     <label for="täby">Täby</label><br>
@@ -37,9 +38,22 @@
     <input type="radio" name="city" value="all" id="all" class="city">
     <label for="all">All</label><br>
   </div>
-  <button id="show-students-btn">Show students</button>
-  <input type="checkbox" name="teacher" id="teacher">
-  <label for="teacher">I am a teacher, I promise</label>
+  <br>
+  <div id="div-3">
+    <label for="year">Select the year:</label>
+    <select name="year" id="year">
+      <option value="All">All</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
+  </div>
+  <br>
+  <div id="div-4">
+    <button id="show-students-btn">Show students</button>
+    <input type="checkbox" name="teacher" id="teacher">
+    <label for="teacher">I am a teacher, I promise</label>
+  </div>
+  <div id="add-ul-here">
   </div>
 </body>
 

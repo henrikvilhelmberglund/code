@@ -39,14 +39,19 @@ let students = [
 
 let showStudentsBtn = document.querySelector("#show-students-btn");
 showStudentsBtn.addEventListener("click", () => showStudents());
-let div = document.querySelector("#div-2");
+let div = document.querySelector("#add-ul-here");
 let checkedEducationRadio;
 let checkedCityRadio;
 let ul = document.createElement("ul");
 div.append(ul);
 let teacherCheckbox = document.querySelector("#teacher");
 
+/**
+ * Run on showStudentsBtn click. Creates li elements 
+ * for each student that passes all the filter functions.
+ */
 function showStudents() {
+  if (teacherNotChecked()) { return; };
   ul.innerHTML = "";
   checkedEducationRadio = document.querySelector(".education:checked");
   checkedCityRadio = document.querySelector(".city:checked");
@@ -57,21 +62,36 @@ function showStudents() {
     li.innerText = student.name;
     ul.append(li);
   });
+  return true;
 }
 
-function educationFilter(student) {
+/**
+ * Checks if the teacher checkbox is checked. 
+ * If not, alert and early return in calling function.
+ */
+function teacherNotChecked() {
   if (!teacherCheckbox.checked) {
     alert("Please confirm you're a teacher!");
-    return false;
+    return true;
   }
   else {
-    return (
-      student.education === checkedEducationRadio.value ? true :
-        checkedEducationRadio.value === "all" ? true : false
-    );
+    return false;
   }
 }
 
+/**
+ * Outputs true or false to filter function, sorting by education.
+ */
+function educationFilter(student) {
+  return (
+    student.education === checkedEducationRadio.value ? true :
+      checkedEducationRadio.value === "all" ? true : false
+  );
+}
+
+/**
+ * Outputs true or false to filter function, sorting by city.
+ */
 function cityFilter(student) {
   return (
     student.city === checkedCityRadio.value ? true :
