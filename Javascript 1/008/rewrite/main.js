@@ -57,9 +57,7 @@ function showStudents() {
   checkedEducationRadio = document.querySelector(".education:checked");
   checkedCityRadio = document.querySelector(".city:checked");
   selectedYearOption = document.querySelector("#year");
-  let filteredStudents = students.filter(educationFilter);
-  filteredStudents = filteredStudents.filter(cityFilter);
-  filteredStudents = filteredStudents.filter(yearFilter);
+  let filteredStudents = students.filter(studentFilter);
   filteredStudents.forEach((student) => {
     let li = document.createElement("li");
     li.innerText = student.name;
@@ -85,29 +83,10 @@ function teacherNotChecked() {
 /**
  * Outputs true or false to filter function, sorting by education.
  */
-function educationFilter(student) {
+function studentFilter(student) {
   return (
-    student.education === checkedEducationRadio.value ? true :
-      checkedEducationRadio.value === "all" ? true : false
-  );
-}
-
-/**
- * Outputs true or false to filter function, sorting by city.
- */
-function cityFilter(student) {
-  return (
-    student.city === checkedCityRadio.value ? true :
-      checkedCityRadio.value === "all" ? true : false
-  );
-}
-
-/**
- * Outputs true or false to filter function, sorting by year.
- */
-function yearFilter(student) {
-  return (
-    student.year === +selectedYearOption.value ? true :
-      selectedYearOption.value.toLowerCase() === "all" ? true : false
+    (student.education === checkedEducationRadio.value || checkedEducationRadio.value === "all") &&
+    (student.city === checkedCityRadio.value || checkedCityRadio.value === "all") &&
+    (student.year === +selectedYearOption.value || selectedYearOption.value.toLowerCase())
   );
 }
