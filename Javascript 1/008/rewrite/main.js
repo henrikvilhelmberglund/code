@@ -42,6 +42,7 @@ showStudentsBtn.addEventListener("click", () => showStudents());
 let div = document.querySelector("#add-ul-here");
 let checkedEducationRadio;
 let checkedCityRadio;
+let selectedYearOption;
 let ul = document.createElement("ul");
 div.append(ul);
 let teacherCheckbox = document.querySelector("#teacher");
@@ -55,8 +56,10 @@ function showStudents() {
   ul.innerHTML = "";
   checkedEducationRadio = document.querySelector(".education:checked");
   checkedCityRadio = document.querySelector(".city:checked");
+  selectedYearOption = document.querySelector("#year");
   let filteredStudents = students.filter(educationFilter);
   filteredStudents = filteredStudents.filter(cityFilter);
+  filteredStudents = filteredStudents.filter(yearFilter);
   filteredStudents.forEach((student) => {
     let li = document.createElement("li");
     li.innerText = student.name;
@@ -96,5 +99,15 @@ function cityFilter(student) {
   return (
     student.city === checkedCityRadio.value ? true :
       checkedCityRadio.value === "all" ? true : false
+  );
+}
+
+/**
+ * Outputs true or false to filter function, sorting by year.
+ */
+function yearFilter(student) {
+  return (
+    student.year === +selectedYearOption.value ? true :
+      selectedYearOption.value.toLowerCase() === "all" ? true : false
   );
 }
