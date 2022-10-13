@@ -21,8 +21,8 @@ Skapa en array med minst fem objekt. Varje objekt ska ha ett name, type, brand o
 
 *Skapa en checkbox med label “I am not a robot” som måste vara ifylld för att kunna filtrera kläderna. Om checkboxen inte är ifylld, skapa en alert med texten “Please confirm you’re not a robot!”.
 
-?(Svår) Skapa en checkbox för varje färg som du har använt för dina kläder. Försök lista ut hur du kan visa endast de kläder som har en färg vars checkbox är ifyllda. Lycka till!
-Extra - Byt ut dina radio-buttons mot checkboxar för varje alternativ!
+*(Svår) Skapa en checkbox för varje färg som du har använt för dina kläder. Försök lista ut hur du kan visa endast de kläder som har en färg vars checkbox är ifyllda. Lycka till!
+?Extra - Byt ut dina radio-buttons mot checkboxar för varje alternativ!
 
 
 

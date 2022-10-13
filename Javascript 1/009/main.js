@@ -15,7 +15,7 @@ let clothesArray = [
     name: "Comfy sweater",
     type: "sweater",
     color: "blue",
-    brand: "The comfy"
+    brand: "The Comfy"
   },
   {
     name: "Warm winter jacket",
@@ -34,8 +34,11 @@ let clothesArray = [
 let showAllProductsBtn = document.querySelector("#show-all-products-btn");
 let showProductsUl = document.querySelector("#show-products-ul");
 let showSelectedProductsBtn = document.querySelector("#show-selected-products-btn");
-let selectedDropdown;
-let selectedRadio;
+//let selectedDropdown;
+let checkedTypeCheckboxes;
+let checkedTypeCheckboxesValue = [];
+let checkedBrandCheckboxes;
+let checkedBrandCheckboxesValue = [];
 let checkbox = document.querySelector("#checkbox");
 let checkedColorCheckboxes;
 let checkedColorCheckboxesValue = [];
@@ -64,13 +67,16 @@ function isNotRobotCheck() {
 function showSelectedProducts(clothes) {
   showProductsUl.innerHTML = "";
   checkedColorCheckboxesValue = [];
+  checkedBrandCheckboxesValue = [];
+  checkedTypeCheckboxesValue = [];
   if (!isNotRobotCheck()) {
     alert("Please confirm you're not a robot!");
     return false;
   }
-  selectedDropdown = document.querySelector("#types").value;
-  selectedRadio = document.querySelector("[type=radio]:checked");
+  //selectedDropdown = document.querySelector("#types").value;
+  checkedBrandCheckboxes = Array.from(document.querySelectorAll("[name=brand]:checked"));
   checkedColorCheckboxes = Array.from(document.querySelectorAll("[name=color-checkbox]:checked"));
+  checkedTypeCheckboxes = Array.from(document.querySelectorAll("[name=types]:checked"));
 
   clothes = clothes.filter(cloth => filterClothes(cloth));
   clothes.forEach(cloth => {
@@ -84,6 +90,13 @@ function filterClothes(cloth) {
   checkedColorCheckboxes.forEach((element) => {
     checkedColorCheckboxesValue.push(element.value);
   });
-  return cloth.type === selectedDropdown.toLowerCase() &&
-    cloth.brand === selectedRadio.value && checkedColorCheckboxesValue.includes(cloth.color);
+  checkedBrandCheckboxes.forEach((element) => {
+    checkedBrandCheckboxesValue.push(element.value);
+  });
+  checkedTypeCheckboxes.forEach((element) => {
+    checkedTypeCheckboxesValue.push(element.value.toLowerCase());
+  });
+
+  return checkedTypeCheckboxesValue.includes(cloth.type) &&
+    checkedBrandCheckboxesValue.includes(cloth.brand) && checkedColorCheckboxesValue.includes(cloth.color);
 }
