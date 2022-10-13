@@ -1,3 +1,7 @@
 #radio-div {
   text-align: right;
 }
+
+#container-div {
+  display: flex
+}
