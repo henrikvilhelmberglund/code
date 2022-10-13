@@ -1,38 +1,38 @@
 let clothesArray = [
   {
     name: "Cute t-shirt",
-    type: "t-shirt",
-    color: "pink",
+    type: "T-shirt",
+    color: "Pink",
     brand: "Japan"
   },
   {
     name: "One Piece t-shirt",
-    type: "t-shirt",
-    color: "white",
+    type: "T-shirt",
+    color: "White",
     brand: "Japan"
   },
   {
     name: "Stylish hat",
-    type: "hat",
-    color: "white",
+    type: "Hat",
+    color: "White",
     brand: "Stetson"
   },
   {
     name: "Comfy sweater",
-    type: "sweater",
-    color: "blue",
+    type: "Sweater",
+    color: "Blue",
     brand: "The Comfy"
   },
   {
     name: "Warm winter jacket",
-    type: "jacket",
-    color: "black",
+    type: "Jacket",
+    color: "Black",
     brand: "Peak Performance"
   },
   {
     name: "Cool sneakers",
-    type: "shoes",
-    color: "white",
+    type: "Shoes",
+    color: "White",
     brand: "Nike"
   }
 ];
@@ -72,19 +72,17 @@ function isNotRobotCheck() {
 
 function showSelectedProducts(clothes) {
   showProductsUl.innerHTML = "";
-  checkedColorCheckboxesValue = [];
-  checkedBrandCheckboxesValue = [];
-  checkedTypeCheckboxesValue = [];
   if (!isNotRobotCheck()) {
     alert("Please confirm you're not a robot!");
     return false;
   }
   //selectedDropdown = document.querySelector("#types").value;
-  checkedBrandCheckboxes = Array.from(document.querySelectorAll("[name=brand]:checked"));
-  checkedColorCheckboxes = Array.from(document.querySelectorAll("[name=color-checkbox]:checked"));
-  checkedTypeCheckboxes = Array.from(document.querySelectorAll("[name=types]:checked"));
+  checkedBrandCheckboxes = Array.from(document.querySelectorAll("[name=brand]:checked")).map(element => element.value);
+  checkedColorCheckboxes = Array.from(document.querySelectorAll("[name=color-checkbox]:checked")).map(element => element.value);
+  checkedTypeCheckboxes = Array.from(document.querySelectorAll("[name=types]:checked")).map(element => element.value);
 
   clothes = clothes.filter(cloth => filterClothes(cloth));
+  console.log(clothes);
   clothes.forEach(cloth => {
     let li = document.createElement("li");
     li.innerText = cloth.name;
@@ -93,16 +91,13 @@ function showSelectedProducts(clothes) {
 }
 
 function filterClothes(cloth) {
-  checkedColorCheckboxes.forEach((element) => {
-    checkedColorCheckboxesValue.push(element.value);
-  });
-  checkedBrandCheckboxes.forEach((element) => {
-    checkedBrandCheckboxesValue.push(element.value);
-  });
-  checkedTypeCheckboxes.forEach((element) => {
-    checkedTypeCheckboxesValue.push(element.value.toLowerCase());
-  });
 
-  return checkedTypeCheckboxesValue.includes(cloth.type) &&
-    checkedBrandCheckboxesValue.includes(cloth.brand) && checkedColorCheckboxesValue.includes(cloth.color);
+  console.log(checkedTypeCheckboxes);
+  console.log(cloth.type);
+  console.log(checkedBrandCheckboxes);
+  console.log(cloth.brand);
+  console.log(checkedColorCheckboxes);
+  console.log(cloth.color);
+  return checkedTypeCheckboxes.includes(cloth.type) &&
+    checkedBrandCheckboxes.includes(cloth.brand) && checkedColorCheckboxes.includes(cloth.color);
 }
