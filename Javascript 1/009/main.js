@@ -6,6 +6,12 @@ let clothesArray = [
     brand: "Japan"
   },
   {
+    name: "One Piece t-shirt",
+    type: "t-shirt",
+    color: "white",
+    brand: "Japan"
+  },
+  {
     name: "Stylish hat",
     type: "hat",
     color: "white",
