@@ -36,7 +36,9 @@ let showProductsUl = document.querySelector("#show-products-ul");
 let showSelectedProductsBtn = document.querySelector("#show-selected-products-btn");
 let selectedDropdown;
 let selectedRadio;
-let checkbox = document.querySelector("#checkbox");;
+let checkbox = document.querySelector("#checkbox");
+let checkedColorCheckboxes;
+let checkedColorCheckboxesValue = [];
 showAllProductsBtn.addEventListener("click", () => showAllProducts(clothesArray));
 showSelectedProductsBtn.addEventListener("click", () => showSelectedProducts(clothesArray));
 
@@ -61,22 +63,27 @@ function isNotRobotCheck() {
 
 function showSelectedProducts(clothes) {
   showProductsUl.innerHTML = "";
+  checkedColorCheckboxesValue = [];
   if (!isNotRobotCheck()) {
     alert("Please confirm you're not a robot!");
     return false;
   }
   selectedDropdown = document.querySelector("#types").value;
   selectedRadio = document.querySelector("[type=radio]:checked");
+  checkedColorCheckboxes = Array.from(document.querySelectorAll("[name=color-checkbox]:checked"));
+
   clothes = clothes.filter(cloth => filterClothes(cloth));
   clothes.forEach(cloth => {
     let li = document.createElement("li");
     li.innerText = cloth.name;
     showProductsUl.append(li);
-
   });
 }
 
 function filterClothes(cloth) {
+  checkedColorCheckboxes.forEach((element) => {
+    checkedColorCheckboxesValue.push(element.value);
+  });
   return cloth.type === selectedDropdown.toLowerCase() &&
-    cloth.brand === selectedRadio.value;
+    cloth.brand === selectedRadio.value && checkedColorCheckboxesValue.includes(cloth.color);
 }
