@@ -91,13 +91,6 @@ function showSelectedProducts(clothes) {
 }
 
 function filterClothes(cloth) {
-
-  console.log(checkedTypeCheckboxes);
-  console.log(cloth.type);
-  console.log(checkedBrandCheckboxes);
-  console.log(cloth.brand);
-  console.log(checkedColorCheckboxes);
-  console.log(cloth.color);
   return checkedTypeCheckboxes.includes(cloth.type) &&
     checkedBrandCheckboxes.includes(cloth.brand) && checkedColorCheckboxes.includes(cloth.color);
 }
