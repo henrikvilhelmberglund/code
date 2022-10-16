@@ -32,7 +32,7 @@ Utskrift: name,age,grade
 Övning 3 (function, callbacks, if/else)
 
 
-?Create a function. Your function will be passed two functions, f and g,that don't take any parameters and simply returns a number . Your function has to call them, and return a string which indicates which function returned the larger number.
+*Create a function. Your function will be passed two functions, f and g,that don't take any parameters and simply returns a number . Your function has to call them, and return a string which indicates which function returned the larger number.
 
 If f returns the larger number, return the string f.
 
@@ -44,11 +44,12 @@ If the functions return the same number, return the string neither.
 Övning 4 (funktioner,algoritmer, string methods)
 
 
-Write a function that takes a two-digit number and determines if it's the largest of two possible digit swaps.
+?Write a function that takes a two-digit number and determines if it's the largest of two possible digit swaps.
 
 If 27 is our input, we should return false because swapping the digits gives us 72, and 72 > 27. On the other hand, swapping 43 gives us 34, and 43 > 34.
 
 Numbers with two identical digits should yield true (you can't do better).
+
 
 
 Övning 5 (loopar, strängar)

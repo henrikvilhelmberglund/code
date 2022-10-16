@@ -18,7 +18,7 @@ let students = [
 
 function printData(studentArray) {
   studentArray.forEach(student => {
-    console.log(`student name: ${student.name}, student age: ${student.age}, student grade: ${student.grade}`);
+    return (`student name: ${student.name}, student age: ${student.age}, student grade: ${student.grade}`);
   });
 };
 printData(students);
@@ -44,3 +44,43 @@ function isChristmasEve(date) {
   }
 }
 
+isChristmasEve(myDate1);
+isChristmasEve(myDate2);
+isChristmasEve(myDate3);
+
+function f() {
+  return 5;
+}
+
+function g() {
+  return 9;
+}
+
+function whichReturnedLarger(f, g) {
+  if (f > g) {
+    return f;
+  }
+  else if (f < g) {
+    return g;
+  }
+  else {
+    return "neither";
+  }
+}
+
+whichReturnedLarger(f(), g());
+
+function isBiggerAfterDigitSwap(input) {
+  let a = input.toString()[1];
+  let b = input.toString()[0];
+
+  if (+(a + b) > input) {
+    return true;
+  }
+  else if (+(a + b) < input) {
+    return false;
+  }
+}
+
+isBiggerAfterDigitSwap(24);
+// logpoint {$returnValue}
