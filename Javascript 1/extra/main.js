@@ -120,3 +120,26 @@ function returnCommonValues(a, b) {
 }
 
 returnCommonValues(myArray1, myArray2);
+
+let dice1 = document.querySelector("#dice_1");
+let rollButton1 = document.querySelector("#dice-button1");
+let dice2 = document.querySelector("#dice_2");
+let rollButton2 = document.querySelector("#dice-button2");
+let dice3 = document.querySelector("#dice_3");
+let rollButton3 = document.querySelector("#dice-button3");
+rollButton1.addEventListener("click", () => rollDice());
+
+let valueP = document.querySelector("#value-calc-p");
+valueP.innerHTML = +dice1.innerText + +dice2.innerText + +dice3.innerText;
+let highestValueP = document.querySelector("#highest-value-calc-p");
+highestValueP.innerText = +valueP.innerText;
+
+function rollDice(input) {
+  dice1.innerHTML = Math.ceil(Math.random() * 6);
+  dice2.innerHTML = Math.ceil(Math.random() * 6);
+  dice3.innerHTML = Math.ceil(Math.random() * 6);
+  valueP.innerHTML = +dice1.innerText + +dice2.innerText + +dice3.innerText;
+  if (+valueP.innerText > +highestValueP.innerText) {
+    highestValueP.innerText = +valueP.innerText;
+  }
+};

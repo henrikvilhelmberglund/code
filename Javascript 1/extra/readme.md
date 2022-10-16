@@ -64,7 +64,7 @@ Numbers with two identical digits should yield true (you can't do better).
 
 Övning 7 (DOM, funktioner, event listeners)
 
-Gör en webbsida med en textrad, ett värde och en knapp, såhär:
+*Gör en webbsida med en textrad, ett värde och en knapp, såhär:
 
 
 Tärning 1: <span id="dice_1">3</span>
@@ -72,15 +72,15 @@ Tärning 1: <span id="dice_1">3</span>
 [Slå tärning] ← Knapp
 
 
-1.1. Gör så att tärningen får ett nytt slumpat värde mellan 1 och 6 när användaren trycker på knappen.
+*1.1. Gör så att tärningen får ett nytt slumpat värde mellan 1 och 6 när användaren trycker på knappen.
 
-1.2. Lägg nu till ett par tärningar till (totalt tre tärningar) och se till att de fungerar likadant, en knapp per tärning som ger tärningen ett nytt värde.
+*1.2. Lägg nu till ett par tärningar till (totalt tre tärningar) och se till att de fungerar likadant, en knapp per tärning som ger tärningen ett nytt värde.
 
-1.3. Ta nu bort alla knappar utom en och se till att alla tärningar får ett nytt värde när du klickar på knappen.
+*1.3. Ta nu bort alla knappar utom en och se till att alla tärningar får ett nytt värde när du klickar på knappen.
 
-1.4. Skriv ut det totala värdet för samtliga tärningar i DOM:en.
+*1.4. Skriv ut det totala värdet för samtliga tärningar i DOM:en.
 
-1.5. Skriv ut texten “Highest score:” i DOM:en som uppdateras varje gång användaren slår ett nytt rekord med tärningarna. 
+*1.5. Skriv ut texten “Highest score:” i DOM:en som uppdateras varje gång användaren slår ett nytt rekord med tärningarna. 
 
 
 Övning 8
