@@ -15,7 +15,7 @@
         "--headless",
         "--remote-debugging-port=9222"
       ],
-      "url": "127.0.0.1:5500",
+      "url": "http://localhost:5500",
       "presentation": {
         "hidden": true
       }
@@ -24,7 +24,7 @@
       "type": "vscode-edge-devtools.debug",
       "name": "Open Edge DevTools",
       "request": "attach",
-      "url": "127.0.0.1:5500",
+      "url": "http://localhost:5500",
       "presentation": {
         "hidden": true
       }
@@ -36,7 +36,7 @@
       "runtimeArgs": [
         "--remote-debugging-port=9222"
       ],
-      "url": "127.0.0.1:5500",
+      "url": "http://localhost:5500",
       "presentation": {
         "hidden": true
       }

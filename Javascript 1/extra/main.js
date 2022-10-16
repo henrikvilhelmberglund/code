@@ -44,6 +44,3 @@ function isChristmasEve(date) {
   }
 }
 
-console.log(isChristmasEve(myDate1));
-console.log(isChristmasEve(myDate2));
-console.log(isChristmasEve(myDate3));
