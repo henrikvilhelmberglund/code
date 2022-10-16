@@ -86,13 +86,13 @@ Tärning 1: <span id="dice_1">3</span>
 Övning 8
 
 
-A word is on the loose and now has tried to hide amongst a crowd of tall letters! Help write a function to detect what the word is, knowing the following rules:
+*A word is on the loose and now has tried to hide amongst a crowd of tall letters! Help write a function to detect what the word is, knowing the following rules:
 
-The wanted word is in lowercase.
+*The wanted word is in lowercase.
 
-The crowd of letters is all in uppercase.
+*The crowd of letters is all in uppercase.
 
-Note that the word will be spread out amongst the random letters, but their letters remain in the same order.
+*Note that the word will be spread out amongst the random letters, but their letters remain in the same order.
 
 
 T.ex
@@ -108,7 +108,7 @@ detectWord("YFemHUFBbezFBYzFBYLleGBYEFGBMENTment") ➞ "embezzlement"
 Övning 9 (Arrayer, objekt)
 
 
-You will be given an array of drinks, with each drink being an object with two properties: name and price. Create a function that has the drinks array as an argument and return the drinks objects sorted by price in ascending order.
+?You will be given an array of drinks, with each drink being an object with two properties: name and price. Create a function that has the drinks array as an argument and return the drinks objects sorted by price in ascending order.
 
 
 Assume that the following array of drink objects needs to be sorted:

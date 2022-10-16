@@ -143,3 +143,22 @@ function rollDice(input) {
     highestValueP.innerText = +valueP.innerText;
   }
 };
+
+const string1 = "UcUNFYGaFYFYGtNUH";
+const string2 = "bEEFGBuFBRrHgUHlNFYaYr";
+const string3 = "YFemHUFBbezFBYzFBYLleGBYEFGBMENTment";
+
+function detectWord(string) {
+  let output = "";
+  string.split("").filter((character) => {
+    if (character === character.toLowerCase()) {
+      output += character;
+    }
+  });
+  return output;
+};
+
+detectWord(string1);
+detectWord(string2);
+detectWord(string3)
+
