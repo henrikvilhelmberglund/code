@@ -60,7 +60,7 @@ Numbers with two identical digits should yield true (you can't do better).
 
 Övning 6 (arrayer, array metoder)
 
-Skriv en funktion som tar emot två arrayer och returnerar en ny array som innehåller de värden som arrayerna har gemensamt.
+*Skriv en funktion som tar emot två arrayer och returnerar en ny array som innehåller de värden som arrayerna har gemensamt.
 
 Övning 7 (DOM, funktioner, event listeners)
 

@@ -98,4 +98,25 @@ function countLetters(sentence, letter) {
 
 countLetters("sentence", "e");
 
+let myArray1 = [1, 3, 5, 7, 9];
+let myArray2 = [2, 4, 7, 9];
 
+
+function returnCommonValues(a, b) {
+  let outputArray = [];
+  a.forEach(item => {
+    if (b.includes(item)) {
+      outputArray.push(item);
+    }
+  });
+  b.forEach(item => {
+    if (a.includes(item)) {
+      if (!outputArray.includes(item)) {
+        outputArray.push(item);
+      }
+    }
+  });
+  return outputArray;
+}
+
+returnCommonValues(myArray1, myArray2);
