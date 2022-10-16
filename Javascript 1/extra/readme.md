@@ -44,7 +44,7 @@ If the functions return the same number, return the string neither.
 Övning 4 (funktioner,algoritmer, string methods)
 
 
-?Write a function that takes a two-digit number and determines if it's the largest of two possible digit swaps.
+*Write a function that takes a two-digit number and determines if it's the largest of two possible digit swaps.
 
 If 27 is our input, we should return false because swapping the digits gives us 72, and 72 > 27. On the other hand, swapping 43 gives us 34, and 43 > 34.
 
@@ -54,7 +54,7 @@ Numbers with two identical digits should yield true (you can't do better).
 
 Övning 5 (loopar, strängar)
 
-Create a function that takes a letter and a sentence as arguments. Return the number of times the letter (the single character) is found in the sentence.
+*Create a function that takes a letter and a sentence as arguments. Return the number of times the letter (the single character) is found in the sentence.
 
 
 

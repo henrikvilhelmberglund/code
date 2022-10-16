@@ -84,3 +84,18 @@ function isBiggerAfterDigitSwap(input) {
 
 isBiggerAfterDigitSwap(24);
 // logpoint {$returnValue}
+
+
+function countLetters(sentence, letter) {
+  let count = 0;
+  sentence.split("").forEach(character => {
+    if (character === letter) {
+      count++;
+    }
+  });
+  return count;
+}
+
+countLetters("sentence", "e");
+
+
