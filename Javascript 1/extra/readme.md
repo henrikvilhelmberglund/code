@@ -7,8 +7,7 @@ Javascript - Samling av övningar
 
 Övning 1 (objekt, funktioner)
 
-
-Skriv en funktion som tar emot en array av objekt med elever samt deras betyg och skriver ut samtlig data. Objektet kan vara vilket som helst, men här är ett exempel:
+*Skriv en funktion som tar emot en array av objekt med elever samt deras betyg och skriver ut samtlig data. Objektet kan vara vilket som helst, men här är ett exempel:
 
 let student = {
 
@@ -27,13 +26,13 @@ Utskrift: name,age,grade
 Övning 2 (funktioner, if/else, Date-objekt)
 
 
-Christmas Eve is almost upon us, so naturally we need to prepare some milk and cookies for Santa! Create a function that accepts a Date object and returns true if it's Christmas Eve (December 24th) and false otherwise. Keep in mind JavaScript's Date month is 0 based, meaning December is the 11th month while January is 0.
+*Christmas Eve is almost upon us, so naturally we need to prepare some milk and cookies for Santa! Create a function that accepts a Date object and returns true if it's Christmas Eve (December 24th) and false otherwise. Keep in mind JavaScript's Date month is 0 based, meaning December is the 11th month while January is 0.
 
 
 Övning 3 (function, callbacks, if/else)
 
 
-Create a function. Your function will be passed two functions, f and g,that don't take any parameters and simply returns a number . Your function has to call them, and return a string which indicates which function returned the larger number.
+?Create a function. Your function will be passed two functions, f and g,that don't take any parameters and simply returns a number . Your function has to call them, and return a string which indicates which function returned the larger number.
 
 If f returns the larger number, return the string f.
 
