@@ -160,5 +160,32 @@ function detectWord(string) {
 
 detectWord(string1);
 detectWord(string2);
-detectWord(string3)
+detectWord(string3);
+
+let drinks = [
+  {
+    name: "lemonade", price: 50
+  },
+  {
+    name: "lime", price: 10
+  },
+  {
+    name: "cola", price: 30
+  },
+  {
+    name: "megabeer", price: 100
+  }
+];
+
+const sortedDrinksArray = [];
+function sortDrinksByPrice(drinksArray) {
+  drinksArray.sort((a, b) => (a.price > b.price) ? 1 : -1);
+  return drinksArray;
+}
+
+sortDrinksByPrice(drinks)
+
+
+
+
 
